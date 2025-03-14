@@ -456,7 +456,7 @@ mg_uper.contacts-list {
 
 .timeline-list {
     font-size: var(--fs6);
-    margin-left: 45px;
+    margin-left: 12px;
 }
 
     .timeline-list span {
@@ -522,8 +522,9 @@ mark {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 8px;
   margin: 1rem 0 0;
+  margin-right: -1.6rem;
 }
 .prime_img img{
   width: 160px;
@@ -1479,7 +1480,7 @@ content: "";
 
 /* in this website */
 .itw {
-    width: 410px; /* يأخذ العرض المتاح */
+    width: 100; /* يأخذ العرض المتاح */
     height: 600px; /* ارتفاع ثابت */
     background-color: #21212121;
     border: 1px solid #444;
@@ -1534,7 +1535,7 @@ svg {
         /*note section*/
         .note_section{
           display: flex;
-          flex-direction: row;
+          flex-wrap: wrap;
           gap: 6px;
           padding: 4px;
         }
