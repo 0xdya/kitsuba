@@ -27,13 +27,16 @@ const data = {
       name: "السيرة",
       children: [
         { name: "المهارات" },
-        { name: "التعليقات" },
+        { name: "حساباتي" },
         {
           name: "المشاريع",
           children: [
             { name: "المواقع" },
             { name: "git tolls" },
-            { name: "كتب" }
+            { name: "كتب",
+            children: [
+            { name: "شعر"}
+              ]}
           ]
         }
       ]
@@ -41,8 +44,12 @@ const data = {
     {
       name: "التواصل",
       children: [
-        { name: "حساباتي" },
-        { name: "إبلاغ" }
+        { name: "إبلاغ" },
+        { name: "التعليقات",
+      children: [
+        { name: "اكتب تعليق"
+        }
+      ]}
       ]
     }
   ]
@@ -124,7 +131,7 @@ node.each(function(d) {
     elem.append("circle")
       .attr("r", CONFIG.nodeRadius)
       .on("click", (event, d) => {
-        if (soundEnabled) playSound("mine.wav");
+        if (soundEnabled) playSound("chest.MP3");
 
         document.querySelectorAll("article[data-page]").forEach(article =>
           article.classList.remove("active")

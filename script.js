@@ -71,24 +71,47 @@ if (form && formBtn) {
 }
 
 // التنقل بين الصفحات
-const navigationLinks = document.querySelectorAll('[data-nav-link]');
-const pages = document.querySelectorAll('[data-page]');
+    const navigationLinks = document.querySelectorAll('[data-nav-link]');
+    const pages = document.querySelectorAll('[data-page]');
+    const secretButton = document.querySelector('[data-secret-nav]');
+    let secretClickCount = 0; // عداد نقرات الزر السري
 
-navigationLinks.forEach(link => {
-    link.addEventListener('click', function () {
-        const targetPage = this.innerText.trim().toLowerCase();
+    // إنشاء عناصر الصوت
+    const clickSound = new Audio('sound/vilg.mp3'); // صوت لكل ضغطة
+    const successSound = new Audio('sound/complet.mp3'); // صوت عند الضغطة الأخيرة
 
+    navigationLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            if (this.hasAttribute('data-secret-nav')) {
+                // زر سري، يحتاج 7 نقرات
+                secretClickCount++;
+
+                if (secretClickCount < 7) {
+                    clickSound.play(); // تشغيل الصوت العادي
+                } else {
+                    successSound.play(); // تشغيل الصوت النهائي
+                    activatePage(this.innerText.trim().toLowerCase(), this);
+                }
+            } else {
+                // باقي الأزرار تعمل بشكل طبيعي
+                activatePage(this.innerText.trim().toLowerCase(), this);
+            }
+        });
+    });
+
+    function activatePage(targetPage, clickedElement) {
         pages.forEach(page => {
             page.classList.toggle('active', page.dataset.page === targetPage);
         });
 
         navigationLinks.forEach(nav => nav.classList.remove('active'));
-        this.classList.add('active');
+        clickedElement.classList.add('active');
 
         window.scrollTo(0, 0);
-    });
-});
+    }
 
+    
+    
 // زر العودة إلى الرئيسية
 document.querySelectorAll('#back-to-home').forEach(button => {
     button.addEventListener('click', function (event) {
@@ -211,8 +234,41 @@ if (soundButton) {
         soundEnabled = !soundEnabled;
         localStorage.setItem("sound", soundEnabled ? "enable" : "disable");
         updateButtons();
-        playSound(soundEnabled ? "up.wav" : "down.wav");
+        playSound(soundEnabled ? "up.MP3" : "down.wav");
     });
 }
 
 updateButtons();
+
+
+    // إنشاء مشهد ثلاثي الأبعاد بسيط لتأثير الخلفية
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 9);
+    const renderer = new THREE.WebGLRenderer({canvas: document.getElementById('bg'), alpha: true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.position.z = 5;
+
+    // إضافة مكعب بسيط يدور
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({color: 0x00ffff, wireframe: true});
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    // تأثير التدوير المستمر
+    function animate() {
+      requestAnimationFrame(animate);
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+// اهتزاز الزر
+        document.getElementById("shakeButton").addEventListener("click", function() {
+            let button = this;
+            button.classList.add("shake");
+
+            // إزالة التأثير بعد انتهاء الاهتزاز
+            setTimeout(() => {
+                button.classList.remove("shake");
+            }, 300);
+        });
