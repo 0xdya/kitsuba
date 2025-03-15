@@ -131,7 +131,7 @@ node.each(function(d) {
     elem.append("circle")
       .attr("r", CONFIG.nodeRadius)
       .on("click", (event, d) => {
-        if (soundEnabled) playSound("chest.MP3");
+        if (soundEnabled) playSound("chest.mp3");
 
         document.querySelectorAll("article[data-page]").forEach(article =>
           article.classList.remove("active")

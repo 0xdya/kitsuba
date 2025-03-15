@@ -234,7 +234,7 @@ if (soundButton) {
         soundEnabled = !soundEnabled;
         localStorage.setItem("sound", soundEnabled ? "enable" : "disable");
         updateButtons();
-        playSound(soundEnabled ? "up.MP3" : "down.wav");
+        playSound(soundEnabled ? "up.mp3" : "down.mp3");
     });
 }
 
