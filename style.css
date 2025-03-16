@@ -2419,3 +2419,6 @@ svg {
         .shake {
             animation: shake 0.3s ease-in-out;
         }
+        .fox{
+          margin: 1rem 0;
+        }

@@ -77,28 +77,37 @@ if (form && formBtn) {
     let secretClickCount = 0; // عداد نقرات الزر السري
 
     // إنشاء عناصر الصوت
-    const clickSound = new Audio('sound/vilg.mp3'); // صوت لكل ضغطة
+    const clickSound = new Audio('sound/throw.mp3'); // صوت لكل ضغطة
     const successSound = new Audio('sound/complet.mp3'); // صوت عند الضغطة الأخيرة
 
-    navigationLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            if (this.hasAttribute('data-secret-nav')) {
-                // زر سري، يحتاج 7 نقرات
-                secretClickCount++;
-
-                if (secretClickCount < 7) {
-                    clickSound.play(); // تشغيل الصوت العادي
-                } else {
-                    successSound.play(); // تشغيل الصوت النهائي
-                    activatePage(this.innerText.trim().toLowerCase(), this);
-                }
+navigationLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        let targetPage = this.dataset.target || this.innerText.trim().toLowerCase(); // استخدم data-target إن وُجد وإلا فالنص العادي
+        
+        if (this.hasAttribute('data-secret-nav')) {
+            secretClickCount++;
+            if (secretClickCount < 7) {
+                clickSound.play();
             } else {
-                // باقي الأزرار تعمل بشكل طبيعي
-                activatePage(this.innerText.trim().toLowerCase(), this);
+                successSound.play();
+                activatePage(targetPage, this);
             }
-        });
+        } else {
+            activatePage(targetPage, this);
+        }
+    });
+});
+
+function activatePage(targetPage, clickedElement) {
+    pages.forEach(page => {
+        page.classList.toggle('active', page.dataset.page === targetPage);
     });
 
+    navigationLinks.forEach(nav => nav.classList.remove('active'));
+    clickedElement.classList.add('active');
+
+    window.scrollTo(0, 0);
+}
     function activatePage(targetPage, clickedElement) {
         pages.forEach(page => {
             page.classList.toggle('active', page.dataset.page === targetPage);
@@ -180,12 +189,25 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // التحكم بالصوت والثيم
-// التحكم بالصوت والثيم
 const soundButton = document.getElementById("sound-toggle");
 const themeButton = document.getElementById("theme-toggle");
 const body = document.body;
 
 let soundEnabled = localStorage.getItem("sound") === "enable";
+
+// إنشاء AudioContext للتأكد من تشغيل الصوت عند التفاعل الأول
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(file) {
+    if (audioContext.state === "suspended") {
+        audioContext.resume().then(() => {
+            console.log("تم استئناف AudioContext.");
+        });
+    }
+
+    const audio = new Audio(`./sound/${file}`);
+    audio.play().catch(error => console.error("خطأ في تشغيل الصوت:", error));
+}
 
 // إذا كانت أول زيارة، فعل الصوت تلقائيًا
 if (localStorage.getItem("sound") === null) {
@@ -205,18 +227,20 @@ function updateButtons() {
         themeButton.textContent = theme === "dark" ? "🌙 الوضع الداكن" : "☀️ الوضع الفاتح";
     }
 }
-
 updateButtons();
 
-function playSound(file) {
-    const audio = new Audio(`./sound/${file}`);
-    audio.play().catch(error => console.error("خطأ في تشغيل الصوت:", error));
-}
-
+// تفعيل الصوت عند التفاعل الأول
 document.addEventListener("click", (event) => {
+    if (audioContext.state === "suspended") {
+        audioContext.resume();
+    }
+
     if (!soundEnabled) return;
+    
     const soundFile = event.target.getAttribute("data-sound");
-    if (soundFile) playSound(soundFile);
+    if (soundFile) {
+        playSound(soundFile);
+    }
 });
 
 if (themeButton) {
@@ -237,10 +261,6 @@ if (soundButton) {
         playSound(soundEnabled ? "up.mp3" : "down.mp3");
     });
 }
-
-updateButtons();
-
-
     // إنشاء مشهد ثلاثي الأبعاد بسيط لتأثير الخلفية
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 9);
