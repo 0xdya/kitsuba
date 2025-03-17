@@ -191,7 +191,6 @@ article { display: none; }
 
 .h2, .h3, .h4, .h5 { 
     color: var(--white2);
-    text-transform: capitalize;
 }
 
     .h2 { font-size: var(--fs1); }
@@ -208,7 +207,25 @@ article { display: none; }
     display: flex;
     flex-direction: row;
 }
-
+.kbh {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.kbh_title {
+    position: relative;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+}
+.kbh_title span{
+  color: #fc2;
+  margin-left: 12px;
+  font-size: 32px;
+  margin-top: -9px;
+}
     .article-title::after {
         content: '';
         position: absolute;
@@ -276,14 +293,19 @@ article { display: none; }
 }
 
 
+/* avatar with shadow
+.avatar-box {
+    background: var(--bg-gradient-onyx);
+    border-radius: 20px;
 
+}
+*/
 .avatar-box {
     background: var(--bg-gradient-onyx);
     border-radius: 0px;
     -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 88%);
     mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
 }
-
 .info-content .name {
     color: var(--white2);
     font-size: var(--fs3);
@@ -1925,8 +1947,6 @@ svg {
     font-weight: var(--fw300);
     line-height: 1.6;
     display: -webkit-box;
-    line-clamp: 4;
-    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
         }
@@ -1973,8 +1993,8 @@ svg {
 .heart-icon{
   color: #ff4444;
             font-size: 1rem;
-            margin-left: -0.6rem;
-            margin-top: 0.4rem;
+            margin-left: -0.8rem;
+            margin-top: 0.8rem;
             z-index: 2;
             -webkit-text-stroke: 1px #eee; /* سماكة الحدود ولونها */
 }
@@ -2422,3 +2442,22 @@ svg {
         .fox{
           margin: 1rem 0;
         }
+        .kitsuba {
+          background: linear-gradient(to bottom, 
+        var(--eerie-black1), /* اللون الأسود في البداية */
+        #faebd7 50%, /* لون المنتصف */
+        #faebd7 80%, /* تثبيت لون المنتصف */
+        var(--eerie-black2) /* اللون الأسود في النهاية */
+    );
+        }
+        .kitsuba img{
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          mix-blend-mode: darken;
+        }
+        .center_txt{
+  margin: 0 auto;
+  direction: ltr;
+  text-align: right;
+}

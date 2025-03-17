@@ -292,3 +292,6 @@ if (soundButton) {
                 button.classList.remove("shake");
             }, 300);
         });
+if (navigator.userAgent.includes("Instagram")) {
+    alert("قد تواجه مشاكل في عرض الموقع داخل متصفح Instagram. يُفضل فتحه في متصفح خارجي.");
+}

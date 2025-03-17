@@ -23,11 +23,12 @@ const data = {
   children: [
     { name: "الإعدادات" },
     { name: "بلوج" },
+    { name: "KBH" },
     {
       name: "السيرة",
       children: [
-        { name: "المهارات" },
         { name: "حساباتي" },
+        { name: "kitsuba" },
         {
           name: "المشاريع",
           children: [
