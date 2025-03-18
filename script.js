@@ -108,16 +108,6 @@ function activatePage(targetPage, clickedElement) {
 
     window.scrollTo(0, 0);
 }
-    function activatePage(targetPage, clickedElement) {
-        pages.forEach(page => {
-            page.classList.toggle('active', page.dataset.page === targetPage);
-        });
-
-        navigationLinks.forEach(nav => nav.classList.remove('active'));
-        clickedElement.classList.add('active');
-
-        window.scrollTo(0, 0);
-    }
 
     
     
@@ -295,3 +285,6 @@ if (soundButton) {
 if (navigator.userAgent.includes("Instagram")) {
     alert("قد تواجه مشاكل في عرض الموقع داخل متصفح Instagram. يُفضل فتحه في متصفح خارجي.");
 }
+AOS.init({
+  once: true // يجعل الأنميشن يحدث مرة واحدة فقط
+});
