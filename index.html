@@ -1,70 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#000" />
-  <meta name="description" content="dyaa edin | website, Visit and know about me & my projects/designs." />
-  <meta name="keywords" content="dyaa, Dyaa, dhiya, Dhiya, dyaa edin, dhiya edin, diaa, diaa edin, ضياء, ضياء الدين, mellouk, mellouk Dyaa, mellouk dhiya, mellouk dhiya edin" />
-  <meta name="author" content="Dyaa Edin" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/Dhiya2007/dya/main/img/web.webp" />
-  <meta property="og:title" content="Dyaa Edin | website" />
-  <meta property="og:description" content="Hi! My name is Dyaa edin. I'm a web developer and digital visual artist. Visit and know about me & my projects/designs." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <title>dya</title>
-  <link rel="icon" type="icon.webp" href="img/web.webp" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
-  <!-- Icons -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- custom css -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Google Analytics (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-479579142"></script>
 
- </head>
- <body>
-     <section class="about" id="about">
-   
-<div class="about-card">
-        <div class="image-container">
-        </div>
-        <div class="about-content">
-            <p class="cloum bottom" dir="rtl">
-              تم غلق الموقع لأسباب برمجية
-              </p>
-        </div>
-    </div>
-  </section>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>dyaa edin </title>
+	<link rel="stylesheet" href="./style.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
- </body>
-      <script>
-        // احصل على العنصر
-        const notification = document.getElementById('welcomeNotification');
-        
-        // إنشاء تأخير عشوائي بين 1 ثانية و 5 ثوانٍ
-        const randomDelay = Math.floor(Math.random() * 60000) + 40000; 
-        
-        // اعرض الإشعار بعد التأخير العشوائي
-        setTimeout(() => {
-            notification.classList.add('show-nf');
-        }, randomDelay); // التأخير العشوائي
-        
-        // اخفِ الإشعار بعد 3 ثوانٍ من ظهوره
-        setTimeout(() => {
-            notification.classList.remove('show-nf');
-        }, randomDelay + 6600); // الإشعار يظل ظاهرًا لمدة 3 ثوانٍ
-    </script>
 
-  <!-- scroll reveal -->
-  <!-- typed js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <!-- custom js -->
-  <script src="js/script.js"></script>
-  <script src="js/analysis.js"></script>
+</head>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
-  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<body>
+	<main dir="rtl">
+		<aside class="sidebar " data-sidebar>
+			<div class="sidebar-info">
+				<figure  class="avatar-box"> <img data-sound="cave.mp3" src="img/f3.jpg" alt="avatar" width="80"> </figure>
+				<div class="info-content">
+					<h1 class="name" title="Richard Hanrick">ملوك ضياء الدين</h1>
+					<p dir="ltr" class="title">@KitsuBa</p>
+				</div>
+				<button class="info-more-btn" data-sidebar-btn> <span>Show Contacts</span>
+					<ion-icon name="chevron-down"></ion-icon>
+				</button>
+			</div>
+			<div class="sidebar-info-more">
+				<div class="separator"></div>
+				<ul class="contacts-list">
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="mail-outline"></ion-icon>
+						</div>
+						<div class="contact-info">
+							<p class="contact-title">البريد</p> <a href="mailto:dyaa_contact@yahoo.com" class="contact-link">dyaa_contact@yahoo.com</a> </div>
+					</li>
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="accessibility-outline"></ion-icon>
+						</div>
+						<div class="contact-info">
+							<p class="contact-title">المستوى التعليمي</p> <a href="#" class="contact-link">3 تقني رياضي | هندسة كهربائية</a> </div>
+					</li>
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="calendar-outline"></ion-icon>
+						</div>
+						<div class="contact-info">
+							<p class="contact-title">الميلاد</p>
+							<time datetime="1982-06-23">جوان 12, 2007</time>
+						</div>
+					</li>
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="location-outline"></ion-icon>
+						</div>
+						<div class="contact-info">
+							<p class="contact-title">المكان</p> <address>الجزائر 🇩🇿</address> </div>
+					</li>
+				</ul>
+				<div class="separator"></div>
+				<ul class="social-list">
+					<li class="social-item">
+						<a href="#" class="social-link">
+							<ion-icon name="logo-facebook"></ion-icon>
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="https://x.com/dyaa_dev?s=09" class="social-link">
+							<ion-icon name="logo-twitter"></ion-icon>
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="https://www.instagram.com/dyaa_dn?igsh=MWxjemZ2anZwemU2Zg==" class="social-link">
+							<ion-icon name="logo-instagram"></ion-icon>
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="#" class="social-link">
+							<ion-icon name="logo-discord"></ion-icon>
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="t.me/kitsub_63" class="social-link">
+							<ion-icon name="paper-plane-outline"></ion-icon>
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="#" class="social-link">
+							<ion-icon name="logo-whatsapp"></ion-icon>
+						</a>
+					</li>
+					<li class="social-item">
+						<a href="https://github.com/dyaa-edin" class="social-link">
+							<ion-icon name="logo-github"></ion-icon>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<div class="main-content">
+			<nav class="navbar">
+				<ul class="navbar-list">
+					<li class="navbar-item">
+						<button data-sound="chest2.mp3" class="navbar-link active" data-nav-link>الرئيسية</button>
+					</li>
+					<li class="navbar-item">
+						<button data-sound="pop2.mp3" class="navbar-link" data-nav-link>السيرة</button>
+					</li>
+					<li class="navbar-item">
+						<button data-sound="pop2.mp3" class="navbar-link" data-nav-link>حساباتي</button>
+					</li>
+					<li class="navbar-item">
+						<button data-sound="pop2.mp3" class="navbar-link" data-nav-link>بلوج</button>
+					</li>
+					<li class="navbar-item">
+						<button data-sound="pop2.mp3" class="navbar-link" data-nav-link>الإعدادات</button>
+					</li>
+				</ul>
+			</nav> <span class="blur"></span>
+			<article class="about active" data-page="الرئيسية">
+				<div class="banner">
+					<div class="content">
+						<header>
+							<h2 data-aos-duration="1000" data-aos-delay="0" data-aos="zoom-in-right" class="h2 article-title">من أنا؟</h2> </header>
+						<section  class="about-text">
+							<p data-aos-duration="1000" data-aos-delay="1000" data-aos="fade-up"> أنا ضياء الدين الملقب ب: "kitsuba"، مطوّر مواقع مستقل، رسام، ومصمم. أمتلك خبرة تتجاوز ثلاث سنوات في تطوير المواقع، حيث أعمل على بناء واجهات حديثة تجمع بين الأداء، الأمان، والجمالية🍃 . فهدفي الوصول إلى تجربة مستخدم فائقة السلاسة وخالية من الأخطاء البرمجية التقنية، كما أنني أدير أزيد من أربعة عشر مشروعًا مستقلاً. </p>
+							<p data-aos-duration="1000" data-aos-delay="1500" data-aos="fade-up"> إلى جانب البرمجة، أنا شاعر أميل إلى الشعر الإسلامي والوعظي، وأسعى من خلاله إلى نشر قيم و أخلاق السلف الصالح من الصحابة بأسلوب أدبي سهل الحفظ و الاستعاب. وقد ألفت كتابًا بعنوان "المنهاج المبين في مسالك المتقين"، وهو نونية شعرية تضم نحو 130 بيتًا، تناولت فيها اصول التوحيد و العقيدة وأمور دنيوية تهم المسلمين. </p>
+						</section>
+					</div>
+				</div> <span class="blur2"></span>
+				<hr>
+				<section class="in_this_web"id="map">
+					<h3 data-aos-duration="1000" data-aos-delay="0" data-aos="fade-up"  class="h3 service-title article-title">   خريطة الموقع   </h3>
+					<div class="note_section">
+						<div data-aos-duration="1000" data-aos-delay="200" data-aos="fade-up" data-sound="note.mp3" class="note">
+							<ion-icon name="alert-circle-outline"></ion-icon> يمكنك تحريك العناصر</div>
+							<a href="https://kitsuba.vercel.app#map">
+						<div data-aos-duration="1000" data-aos-delay="300" data-aos="fade-up"data-sound="note.mp3" class="note">
+							<ion-icon name="alert-circle-outline"></ion-icon> حدث الصفحة لإعادة ترتيب </div>
+							</a>
+						<div data-aos-duration="1000" data-aos-delay="400" data-aos="fade-up"data-sound="note.mp3" class="note">
+							<ion-icon name="alert-circle-outline"></ion-icon> اضغط على العنصر للذهاب الى الصفحة </div>
+					
+					</div>
+					<div data-aos-duration="1000" data-aos-delay="800" data-aos="fade-up"class="itw">
+						<svg></svg>
+					</div>
+				</section>
+				<hr>
+					<div data-aos-duration="1000" data-aos-delay="200" data-aos="fade-up" class="note"><br>
+					  <img data-nav-link data-target="achievement" data-secret-nav id="shakeButton"class="fox"width="300"src="img/fox.gif">
+					</div>
+			</article>
+			<article class="resume " data-page="السيرة">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > السيرة الذاتية </div> <a data-sound="sound/chest2.mp3" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">السيــرة الداتيــة</h2> </header>
+				<section class="timeline">
+					<div class="title-wrapper">
+						<div class="icon-box">
+							<ion-icon name="book-outline"></ion-icon>
+						</div>
+						<h3 class="h3" >
+                          <mark>
+                          المسيرة:
+                          </mark>
+                          </h3> </div>
+					<ol class="timeline-list">
+						<li class="timeline-item">
+							<h4 class="h4 timeline-item-title highlight">أول موقع صنعته وبدايتي في البرمجة</h4> <span>2020 - 2021</span>
+							<p class="timeline-text"> لم تكن لديّ نية مسبقة لدخول مجال برمجة المواقع، لكن حدثت لي واقعة كانت السبب الرئيسي في ذلك.
+								<br> كنت سابقًا شخصًا يقضي 80% من حياته في الرسم، وكان لديّ شغف كبير به، حيث كنت أرسم تقريبًا كل يوم وأشارك رسوماتي المتواضعة على إنستقرام (كان لديّ حوالي 40 مشتركًا ._. 👍🏻).
+								<br> في أحد الأيام، أثناء تصفحي لفيسبوك، تفاجأت بشخص يسرق رسوماتي وينشرها على حسابه مدّعيًا أنه صاحبها. ورغم أن منشوراته لم تكن تحظى بمشاهدات تُذكر وكان يحذف التعليقات، وحتى رسماتي لم تكن بتلك الكفائة التي تستحق أن تسىرق ...إلا انها فعلاً سرقت ...🗿 ثم بعدها غضبت جدًا وبدأت أبحث عن مكان آمن لكي أنقل اليه رسوماتي بطريقة سهلة وتحميها من السرقة.
+								<br> بحثت عن مواقع كبيرة تقدم هذه الخدمة، لكنني تفاجأت بأن الذين يَعرِضون رسوماتهم هناك يكونون أكثر عرضة للسرقة ._. 💔
+								<br> ومن هنا قررت أن أتعلم كيفية إنشاء موقع بسيط خاص بي، حيث أضع فيه رسوماتي ولا يمكن لأحد رؤيتها إلا من يملك الرابط. وهكذا بدأت رحلتي في البرمجة.
+								<br>
+								<a class="draw_link" href="https://dhiya2007.github.io/DRAW/"> <i class='bx bx-link'></i> رابط موقع الرسمات، أول موقع لي (هذه النسخة المُحدّثة وليست النسخة الأولى): </a>
+							</p>
+						</li>
+						<li class="timeline-item mg_uper">
+							<h4 class="h4 timeline-item-title highlight">البداية الحقيقية لبرمجة المواقع</h4> <span>2023 - 2024</span>
+							<p class="timeline-text"> بعد حادثة سرقة رسوماتي وإنشائي للموقع، انسحبت من هذا المجال إلى غاية السنة الثانية من الثانوية. حينها، كان زملاء صفي يُحضّرون مشاريع مختلفة ليتم عرضها في "كلية التكنولوجيا – جامعة طاهري محمد ببشار". بحثت عن فكرة لمشروعي، لكن وجدت أن معظم الأفكار قد استُخدمت بالفعل.
+								<br> حينها تذكرت أن الثانوية التي أدرس فيها لا تملك موقعًا إلكترونيًا خاصًا بها، فخطرت لي فكرة: لماذا لا أصنع موقعًا للثانوية؟
+								<br> وبالفعل، صممت الموقع بالكامل في أقل من أسبوع، وكان ذلك بمثابة البوابة الحقيقية التي دخلت من خلالها إلى عالم برمجة المواقع. </p>
+						</li>
+						<li class="timeline-item mg_uper">
+							<h4 class="h4 timeline-item-title highlight">المرحلة prime</h4> <span>2024 - 2025</span>
+							<p class="timeline-text"> في هذه المرحلة، وصلت إلى حدّ الإدمان! حرفيًا ,حيث أنني صنعت عددًا يكاد لا يعد ولا يحصى من المواقع، فأغلب المشاريع التي سأعرضها في هذا الموقع بُرمجت خلال هذه الفترة. بالإضافة إلى ذلك، أنشأت العديد من المواقع لأصدقائي، وبعضها جعلته خاصًا. وأحيانًا، من شدة شغفي كنت أصمم مواقع ضخمة لشركات وهمية من مخيلتي، أجعلها متفرعة وفائقة التفاصيل.
+								<br> وكنت اقضدي الساعات بدون ان اشعر ،حتى انني أملك لقطة شاشة ليوم من الأيام وصلت الى غاية 9 ساعات و 47 دقيقة في يوم واحد ☠️ </p>
+							<div class="prime_img"> <img src="img/sc1.jpg"> <img src="img/sc2.jpg"> </div>
+						</li>
+					</ol>
+				</section>
+				<hr>
+				<section class="timeline">
+					<div class="title-wrapper">
+						<div class="icon-box">
+							<ion-icon name="book-outline"></ion-icon>
+						</div>
+						<h3 class="h3 highlight">     
+                        <mark>
+                        الشهادات      
+                        </mark>
+                        </h3> </div>
+					<ol class="timeline-list">
+						<li class="timeline-item">
+							<h4 class="h4 timeline-item-title highlight">
+                              ثانوية أبي حامد الغزالي  
+                              
+                              
+                              </h4> <span>2023 - 2024</span>
+							<p class="timeline-text">بعد عرضي لموقع الثانوية.</p>
+							<button onclick="location.href='./img/ex2.jpg';" class="btn">
+								<p>عرض الصورة</p>
+								<?xml version="1.0" encoding="utf-8"?>
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M11.7071 4.29289C12.0976 4.68342 12.0976 5.31658 11.7071 5.70711L6.41421 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H6.41421L11.7071 18.2929C12.0976 18.6834 12.0976 19.3166 11.7071 19.7071C11.3166 20.0976 10.6834 20.0976 10.2929 19.7071L3.29289 12.7071C3.10536 12.5196 3 12.2652 3 12C3 11.7348 3.10536 11.4804 3.29289 11.2929L10.2929 4.29289C10.6834 3.90237 11.3166 3.90237 11.7071 4.29289Z" />
+									</svg>
+							</button>
+						</li>
+						<li class="timeline-item mg_uper">
+							<h4 class="h4 timeline-item-title highlight"> autotech</h4> <span>2023 - 2024</span>
+							<p class="timeline-text">I بعد عرضي لموقعي الأساسي القديم الذي قمت بتعطيله قبل صنعي لهذا الموقع.</p>
+							<button onclick="location.href='./img/ex1.jpg';" class="btn">
+								<p>عرض الصورة</p>
+								<?xml version="1.0" encoding="utf-8"?>
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M11.7071 4.29289C12.0976 4.68342 12.0976 5.31658 11.7071 5.70711L6.41421 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H6.41421L11.7071 18.2929C12.0976 18.6834 12.0976 19.3166 11.7071 19.7071C11.3166 20.0976 10.6834 20.0976 10.2929 19.7071L3.29289 12.7071C3.10536 12.5196 3 12.2652 3 12C3 11.7348 3.10536 11.4804 3.29289 11.2929L10.2929 4.29289C10.6834 3.90237 11.3166 3.90237 11.7071 4.29289Z" />
+									</svg>
+							</button>
+						</li>
+					</ol>
+				</section>
+				<hr>
+				<h2 class="h2 article-title">المهارات</h2> </header>
+				<section class="tech_stack">
+					<h3 class="h3 service-title article-title">  tech stack</h3>
+					<div class="stack_cont">
+						<div class="laung" data-sound="pop2.mp3"   data-label="js"> <img src="svg/js.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="android software"> <img  src="svg/android.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="magisk module"> <img  src="svg/magisk.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="php"> <img  src="svg/php.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="css"> <img  src="svg/css.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="scss"> <img  src="svg/scss.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="tailwind"> <img  src="svg/tailwind.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="html"> <img  src="svg/html.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="vs code"> <img  src="svg/vs.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="netlify"> <img  src="svg/netlify.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="firebase"> <img  src="svg/firebase.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="vercel"> <img  src="svg/vercel.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="git"> <img  src="svg/git.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="github"> <img  src="svg/github.svg"> </div>
+						<div class="laung" data-sound="pop2.mp3"   data-label="bootstrap"> <img  src="svg/bootstrap.svg"> </div>
+					</div>
+				</section>
+			</article>
+			<article class="portfolio " data-page="المشاريع">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > المشاريع </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">المشاريع</h2> </header>
+				<section class="projects">
+					<ul class="filter-list">
+						<li class="filter-item">
+							<button class="active" data-filter-btn>All</button>
+						</li>
+						<li class="filter-item">
+							<button data-filter-btn>web project</button>
+						</li>
+						<li class="filter-item">
+							<button data-filter-btn>book</button>
+						</li>
+						<li class="filter-item">
+							<button data-filter-btn>github project</button>
+						</li>
+					</ul>
+					<div class="filter-select-box">
+						<button class="filter-select " data-select>
+							<div class="select-value" data-select-value>Select Category</div>
+							<div class="select-icon">
+								<ion-icon name="chevron-down"></ion-icon>
+							</div>
+						</button>
+						<ul class="select-list">
+							<li class="select-item">
+								<button data-select-item>All</button>
+							</li>
+							<li class="select-item">
+								<button data-select-item>web project</button>
+							</li>
+							<li class="select-item">
+								<button data-select-item>book</button>
+							</li>
+							<li class="select-item">
+								<button data-select-item>github project</button>
+							</li>
+						</ul>
+					</div>
+					<ul class="project-list">
+						<!-- web project -->
+						<li class="project-item active" data-filter-item data-category="web project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://dyaa-edin.netlify.app/d1.jpg" alt="d1shop" loading="lazy"> </figure>
+								<h3 class="project-title">d1shop</h3>
+								<p class="project-category">web project</p>
+							</a>
+						</li>
+						<li class="project-item active" data-filter-item data-category="web project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://dyaa-edin.netlify.app/bac.jpg" alt="d1bac" loading="lazy"> </figure>
+								<h3 class="project-title">d1bac</h3>
+								<p class="project-category">web project</p>
+							</a>
+						</li>
+						<!-- github -->
+						<li class="project-item active" data-filter-item data-category="github project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://i.postimg.cc/qRHpHMyd/project-1.jpg" alt="finance" loading="lazy"> </figure>
+								<h3 class="project-title">d1shop</h3>
+								<p class="project-category">github project</p>
+							</a>
+						</li>
+						<!-- book -->
+						<li class="project-item active" data-filter-item data-category="book">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://i.postimg.cc/dtpXxNGb/project-4.png" alt="brawlhalla" loading="lazy"> </figure>
+								<h3 class="project-title">Brawlhalla</h3>
+								<p class="project-category">book</p>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</article>
+			<article class="portfolio " data-page="المواقع">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > المشاريع > المواقع </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">المواقع</h2> </header>
+				<section class="projects">
+					<ul class="project-list">
+						<!-- web project -->
+						<li class="project-item active" data-filter-item data-category="web project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://dyaa-edin.netlify.app/d1.jpg" alt="d1shop" loading="lazy"> </figure>
+								<h3 class="project-title">d1shop</h3>
+								<p class="project-category">web project</p>
+							</a>
+						</li>
+						<li class="project-item active" data-filter-item data-category="web project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://dyaa-edin.netlify.app/bac.jpg" alt="d1bac" loading="lazy"> </figure>
+								<h3 class="project-title">d1bac</h3>
+								<p class="project-category">web project</p>
+							</a>
+						</li>
+						<!-- github -->
+						<li class="project-item active" data-filter-item data-category="github project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://i.postimg.cc/qRHpHMyd/project-1.jpg" alt="finance" loading="lazy"> </figure>
+								<h3 class="project-title">d1shop</h3>
+								<p class="project-category">github project</p>
+							</a>
+						</li>
+						<!-- book -->
+						<li class="project-item active" data-filter-item data-category="book">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://i.postimg.cc/dtpXxNGb/project-4.png" alt="brawlhalla" loading="lazy"> </figure>
+								<h3 class="project-title">Brawlhalla</h3>
+								<p class="project-category">book</p>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</article>
+			<article class="portfolio " data-page="git tolls">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > المشاريع > github tolls </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">github tolls</h2> </header>
+				<section class="projects">
+					<ul class="project-list">
+						<!-- web project -->
+						<li class="project-item active" data-filter-item data-category="web project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://dyaa-edin.netlify.app/d1.jpg" alt="d1shop" loading="lazy"> </figure>
+								<h3 class="project-title">d1shop</h3>
+								<p class="project-category">web project</p>
+							</a>
+						</li>
+						<li class="project-item active" data-filter-item data-category="web project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://dyaa-edin.netlify.app/bac.jpg" alt="d1bac" loading="lazy"> </figure>
+								<h3 class="project-title">d1bac</h3>
+								<p class="project-category">web project</p>
+							</a>
+						</li>
+						<!-- github -->
+						<li class="project-item active" data-filter-item data-category="github project">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://i.postimg.cc/qRHpHMyd/project-1.jpg" alt="finance" loading="lazy"> </figure>
+								<h3 class="project-title">d1shop</h3>
+								<p class="project-category">github project</p>
+							</a>
+						</li>
+						<!-- book -->
+						<li class="project-item active" data-filter-item data-category="book">
+							<a href="#">
+								<figure class="project-img">
+									<div class="project-item-icon-box">
+										<ion-icon name="eye-outline"></ion-icon>
+									</div> <img src="https://i.postimg.cc/dtpXxNGb/project-4.png" alt="brawlhalla" loading="lazy"> </figure>
+								<h3 class="project-title">Brawlhalla</h3>
+								<p class="project-category">book</p>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</article>
+			<article class="portfolio " data-page="التعليقات">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > التواصل > التعليقات </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">التعليقات</h2> </header>
+				<div class="container">
+					<ul dir="rtl" class="review-list">
+						<li class="review-item"> <img src="img/n4.gif" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class=" pin reves">📌</span> </div>
+								<div class="reviewer">ضياء الدِين</div>
+								<div dir="rtl" class="review-text">سبحان الله وبحمده، عدد خلقه، ورضا نفسه، وزنة عرشه، ومداد كلماته</div> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2024-08-10"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+						<li class="review-item"> <img src="https://dyaa-edin.netlify.app/img/luai.webp" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class="heart-icon">♥</span> <img src="img/m6.jpg" alt="Owner's profile"> </div>
+								<div class="reviewer">دحماني محمد لؤي </div>
+								<div class="review-text"> خرافيي استمر و طور من نفسك وفقك الله </div> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2024-08-14T02:45:01"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+						<li class="review-item"> <img src="https://dyaa-edin.netlify.app/img/pfp1.webp" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class="heart-icon">♥</span> <img src="/img/m6.jpg" alt="Owner's profile"> </div>
+								<div class="reviewer">ibr </div>
+								<div class="review-text">nice work</div> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2024-08-14T17:06"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+						<li class="review-item"> <img src="https://dyaa-edin.netlify.app/img/pfp20.webp" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class="heart-icon">♥</span> <img src="/img/m6.jpg" alt="Owner's profile"> </div>
+								<div class="reviewer">brahim </div>
+								<div class="review-text"> إستمر في هذا المجال وفقك الله</div> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2024-08-16T09:59"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+						<li class="review-item"> <img src="https://dyaa-edin.netlify.app/img/usr.webp" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class="heart-icon">♥</span> <img src="/img/m6.jpg" alt="Owner's profile"> </div>
+								<div class="reviewer">منصور عبد الهادي </div>
+								<div class="review-text"> ما شاء الله ...واصل </div> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2024-10-17T20:58"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+						<li class="review-item"> <img src="https://dyaa-edin.netlify.app/img/pfp7.webp" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class="heart-icon">💗</span> <img src="/img/m6.jpg" alt="Owner's profile"> </div>
+								<div class="reviewer">Nadjwa </div>
+								<div class="review-text"> ماشاء الله تبارك الرحمن وفقك الله لما يحبه ويرضاه بارك الله فيك و في من رباك لك مني اطيب التماني بالنجاح و التوفيق </div> <i class='bx x-time-five'>🎀</i> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2024-11-12T21:49"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+						<li class="review-item"> <img src="https://dyaa-edin.netlify.app/img/usr.webp" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class="heart-icon">♥</span> <img src="/img/m6.jpg" alt="Owner's profile"> </div>
+								<div class="reviewer">بيجاد </div>
+								<div class="review-text"> تبارك الرحمن ربي يوفقك انسان خلوق و متواضع نعم التربية وفقك الله 🤲 </div> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2024-12-30T14:03"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+						<li class="review-item"> <img src="https://dyaa-edin.netlify.app/img/pfp5.webp" alt="User image">
+							<div class="review-content">
+								<div class="owner-like"> <span class="heart-icon">♥</span> <img src="/img/m6.jpg" alt="Owner's profile"> </div>
+								<div class="reviewer"> Haytham </div>
+								<div class="review-text"> You have put a lot of time and work on this huge project you can do more for it
+									<br> Good luck بالتوفيق </div> <i class='bx bx-time-five'></i>
+								<div class="date" data-date="2025-01-13T21:14"></div>
+								<div class="stars">★★★★★</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</article>
+			<article class="my_acount " data-page="حساباتي">
+				<div class="back_to_map_button">
+					<div class="back_to_map_screen">الرئيسية > التواصل > حساباتي </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+				<section class="testimonials">
+					<div class="card"> <img src="img/3.png" alt="" class="image" />
+						<div class="heading">We're on Social Media</div>
+						<div class="icons">
+							<a href="https://github.com/dyaa-edin">
+								<ion-icon name="logo-github"></ion-icon>
+							</a>
+							<a href="https://x.com/dyaa_dev">
+								<ion-icon name="logo-twitter"></ion-icon>
+							</a>
+							<a href="#"> <i class='bx bxl-discord-alt'></i> </a>
+							<a href="#"> <i class='bx bxl-youtube'></i> </a>
+							<a href="t.me/kitsub_63"> <i class='bx bxl-telegram'></i> </a>
+							<a href="#"> <i class='bx bxl-messenger'></i> </a>
+							<a href="https://www.instagram.com/dyaa_dn?igsh=MWxjemZ2anZwemU2Zg=="> <i class='bx bxl-instagram-alt'></i></a>
+							<a href="#"> <i class='bx bxs-envelope'></i> </a>
+						</div>
+					</div>
+				</section>
+			</article>
+			<article class="kitsuba " data-page="kitsuba">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > معنى كيتسوبا </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					
+					<h2 class="h2 article-title">معنى kitsuba</h2> </header>
+					<img src="img/kitsuba.jpg">
+			</article>
+			<article class=" " data-page="kbh">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية >  مكتشفي الثغرات </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					
+						</header>
+						<div class="kbh">
+						  
+					<h2 dir="ltr" class="h2 kbh_title"><span>k</span>itsuba <span>B</span>ug <span>H</span>unter's</h2> 
+						</div>
+						<h2 class="h5">سوف يتم عرض هنا أكثر الاشخاص إكتشافًا للأخطاء البرمجية أو التصميمية</h2> </article>
+			</article>
+			<article class="blog " data-page="بلوج">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > بلوج </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">Blog</h2> </header>
+				<h2 dir="ltr" class="h2">coming soon ♥</h2> </article>
+			<article class="blog " data-page="achievement">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > إنجاز مخفي </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					</header>
+				<!-- From Uiverse.io by R5Program --> 
+<div class="ach_card">
+<div class="ach_text">
+					<h2 class="h2 article-title">تم فتح إنجاز مخفي <ion-icon name="trophy-outline"></ion-icon></h2>
+				<h2  class="h5">  إسم الإنجاز :<span class="fdoli">  الفتى الفضولي  </span>  </h2>
+				<h2  class="h5">   رتبة الإنجاز: <span class="bronz_arch">برونز</span>   </h2>
+				<h2  class="h5">  طبيعة الإنجاز :<span class="not_rare"> غير نادر </span>  </h2>
+</div>
+  <div style="--i:10;--j:2;" class="blub"></div>
+  <div style="--i:12;--j:1.8;" class="blub"></div>
+  <div style="--i:16;--j:2.2;" class="blub"></div>
+  <div style="--i:9;--j:1.5;" class="blub"></div>
+  <div style="--i:7;--j:1.7;" class="blub"></div>
+  <div style="--i:18;--j:2.5;" class="blub"></div>
+  <div style="--i:20;--j:2;" class="blub"></div>
+  <div style="--i:16;--j:1.9;" class="blub"></div>
+  <div style="--i:21;--j:2.1;" class="blub"></div>
+  <div style="--i:5;--j:1.6;" class="blub"></div>
+
+  <div class="moon bx-spin">
+    <div class="crater cr1"></div>
+    <div class="crater cr2"></div>
+    <div class="crater cr3"></div>
+</div>
+</div>
+<div class="mario_section">
+<h2 class="h5">استمتع بهذا المكعب السحري أيها الفضولي</h2>
+<div class="mario_btn">
+					<button data-sound="pop.mp3" name="checkbox" type="button"></button> <span></span> <span></span> <span></span> <span></span> </div>
+</div>
+</article>
+			<article class="blog " data-page="شعر">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">السيرة > المشاريع < الكتب > شعر </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">مؤلفاتي الشعرية و الأدبية</h2> </header>
+				<h2 dir="ltr" class="h2">coming soon ♥</h2> </article>
+			<article class="contact " data-page="التواصل">
+				<header> 
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > التواصل </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">التواصل</h2> </header>
+				<section class="contact-form">
+					<h3 class="h3 form-title"></h3>
+					<form action="#" class="form" data-form>
+						<div class="input-wrapper">
+							<input type="text" name="fullname" class="form-input" placeholder="الإسم" required data-form-input>
+							<input type="email" name="email" class="form-input" placeholder="البريد الإلكتروني" required data-form-input> </div>
+						<textarea name="message" class="form-input" placeholder="اكتب رسالتك هنا ... " required data-form-input=""></textarea>
+						<button class="form-btn" type="submit" disabled data-form-btn>
+							<ion-icon name="paper-plane"></ion-icon> <span>إرسال</span> </button>
+					</form>
+				</section>
+			</article>
+			<article class="contact " data-page="إبلاغ">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > التواصل > إبلاغ</div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">إبلاغات / نصائح </h2> </header>
+				<section class="contact-form">
+					<h3 class="h3 form-title">ما المشكلة ؟</h3>
+					<form action="#" class="form" data-form>
+						<div class="input-wrapper">
+							<input type="text" name="fullname" class="form-input" placeholder="الإسم" required data-form-input>
+							<input type="email" name="email" class="form-input" placeholder="البريد الإلكتروني" required data-form-input> </div>
+						<textarea name="message" class="form-input" placeholder="اكتب المشكلة أو التحسينات التي يمكن اضافتها، هنا ... " required data-form-input=""></textarea>
+						<button class="form-btn" type="submit" disabled data-form-btn>
+							<ion-icon name="paper-plane"></ion-icon> <span>إرسال</span> </button>
+					</form>
+				</section>
+			</article>
+			<article class="contact " data-page="اكتب تعليق">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > التواصل > اكتب تعليق</div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title"> كتابة التعليقات </h2> </header>
+				<section class="contact-form">
+					<h3 class="h5 form-title">  شكرا على تطوعك ._. ♥</h3>
+					<form action="#" class="form" data-form>
+						<div class="input-wrapper">
+							<input type="text" name="fullname" class="form-input" placeholder="الإسم" required data-form-input>
+							<input type="email" name="email" class="form-input" placeholder="البريد الإلكتروني" required data-form-input> </div>
+						<textarea name="message" class="form-input" placeholder="اكتب المشكلة أو التحسينات التي يمكن اضافتها، هنا ... " required data-form-input=""></textarea>
+						<button class="form-btn" type="submit" disabled data-form-btn>
+							<ion-icon name="paper-plane"></ion-icon> <span>إرسال</span> </button>
+					</form>
+				</section>
+			</article>
+			<article class="setting " data-page="الإعدادات">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > التواصل </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+				</header>
+				<div class="setting_section">
+					<canvas id="bg"></canvas>
+					<h2 class="h2 article-title">الإعدادات</h2>
+					<button class="setting_button" id="sound-toggle">الصوت: مفعل</button>
+					<button class="setting_button" id="theme-toggle">الوضع: داكن</button>
+				</div>
+			</article>
+			<article class="contact " data-page="كتب">
+				<header>
+					<div class="back_to_map_button">
+						<div class="back_to_map_screen">الرئيسية > المشاريع > الكتب </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
+					<h2 class="h2 article-title">الكتب</h2> </header>
+				<section class="bok">
+					<div class="book_section">
+						<div class="book-container" href="" target="_blank" rel="noreferrer noopener">
+							<div class="book"> <img data-sound="pop2.mp3" alt="book" src="https://raw.githubusercontent.com/dyaa-edin/dyaa/refs/heads/main/img/book.jpg" /> </div>
+						</div>
+						<div class="book_title">المنهاج المبين في مسالك المتقين</div>
+						<div class="book_text"> هذا الكتاب الذي سميته بـ "المنهاج المبين في مسالك المتقين" إنما هو عملٌ شعريٌّ، قصدتُ به أن يكون منهاجًا لشباب الأمة، يعيد رسم نهج الأصفياء، ويحيي مسالك الأتقياء. وقد جاهدتُ أن يكون شاملاً لمسائل الحياة، محيطًا بجوانبها، جامعًا بين العقيدة السليمة والموعظة الحسنة. أسأل الله العظيم أن يجعله خالصًا لوجهه الكريم، لا رياء فيه ولا سمعة، وأن ينفع به شباب الأمة، ويهدي به الحائرين، ويدفعهم إلى سلوك الطريق الحق، طريقٍ لا ابتداع فيه ولا نقصان. </div> <a href="https://t.me/devo_book/4" dir="rtl" class="book_link">عرض الكتاب PDF</a> </div>
+				</section>
+			</article>
+		
+		</div>
+	</main>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<!-- partial -->
+	<script src="./script.js"></script>
+	<script src="./space.js"></script>
+	<script src="./analysis.js"></script>
+	<!-- Three.js library -->
+</body>
+
 </html>
