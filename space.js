@@ -32,8 +32,9 @@ const data = {
         {
           name: "المشاريع",
           children: [
+            { name: "روت" },
             { name: "المواقع" },
-            { name: "git tolls" },
+            { name: "أدوات" },
             { name: "كتب",
             children: [
             { name: "شعر"}
