@@ -25,6 +25,9 @@ body::before {
 }
 */
 :root {
+    --artic_bg: rgba(30, 30, 30, 0.5);
+    --node_bg: rgb(30, 30, 30);
+        --artic_shadow: 4px 8px 24px rgba(0, 0, 0, 0.25);
     --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
     --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
     --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
@@ -36,7 +39,7 @@ body::before {
     --onyx: hsl(240, 1%, 17%);
     --eerie-black1: hsl(240, 2%, 13%);
     --eerie-black2: hsla(240,1.6%,12%,0.266);
-    --smoky-black: hsl(0, 0%, 7%);
+    --body_bg: hsl(0, 0%, 7%);
     --white1: hsl(0, 0%, 100%);
     --white2: hsl(0, 0%, 98%);
     --orange-yellow-crayola: hsl(45, 100%, 72%);
@@ -44,6 +47,8 @@ body::before {
     --light-gray: hsl(0, 0%, 84%);
     --light-gray70: hsla(0, 0%, 84%, .7);
     --bittersweet-shimmer: hsl(0, 43%, 51%);
+    --perper: rgba(167, 139, 250, 1);
+    --blue_ball: #1d4ed8;
 
     --ff-poppins: 'Noto Kufi Arabic', sans-serif;
 
@@ -71,17 +76,27 @@ body::before {
     --transition2: .5s ease-in-out;
 }
 body.light-mode {
+  --node_bg: #FDF7F4;
+  --light-gray: #333;
+  --shadow1: 0px 24px 80px #8EB486;
+  --shadow2: transparent;
+  --shadow3: transparent;
+    --orange-yellow-crayola: #997C70;
+    --vegas-gold: #997C70;
+    --artic_bg: #FDF7F4;
+    --artic_shadow: transparent;
     --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 90%) 3%, hsl(0, 0%, 100%) 97%);
     --bg-gradient-jet: linear-gradient(to bottom right, hsla(0, 0%, 80%, .251) 3%, hsla(0, 0%, 100%, 0) 100%), hsl(0, 0%, 95%);
-    --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 40%), hsl(35, 100%, 50%));
+    --text-gradient-yellow: linear-gradient(to right, #8EB486, #8EB486);
 
-    --jet: hsl(0, 0%, 85%);
+    --jet: #111;
     --onyx: hsl(0, 0%, 95%);
     --eerie-black1: hsl(0, 0%, 98%);
     --eerie-black2: hsla(0,0%,99%,0.325);
-    --smoky-black: hsl(0, 0%, 100%);
+    --body_bg: #FDF7F4;
     --white1: hsl(0, 0%, 10%);
     --white2: hsl(0, 0%, 20%);
+    --blue_ball: transparent;
 }
 *, *::before, *::after {
     margin: 0;
@@ -112,7 +127,7 @@ input, textarea {
 
 ::selection {
     background: var(--orange-yellow-crayola);
-    color: var(--smoky-black);
+    color: var(--body_bg);
 }
 
 :focus { outline-color: var(--orange-yellow-crayola); }
@@ -122,7 +137,7 @@ html {
   font-family: var(--ff-poppins); }
 
 body {
-background: var(--smoky-black); 
+background: var(--body_bg); 
 
 }
 
@@ -133,10 +148,10 @@ main {
 }
 
 .sidebar, article {
-    background: rgba(30, 30, 30, 0.5); /* بديل عن backdrop-filter */
+    background: var(--artic_bg); 
     border: 1px solid var(--jet);
     border-radius: 20px;
-    box-shadow: 4px 8px 24px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--artic_shadow);
     z-index: 1;
     padding: 15px;
 }
@@ -743,7 +758,7 @@ mark {
     }
 
     .project-category {
-        color: var(--light-gray70);
+        color: var(--light-gray);
         font-size: var(--fs6);
         font-weight: var(--fw300);
     }
@@ -831,23 +846,35 @@ mark {
 
 /*setting*/
  .setting_section {
-            background: rgba(0, 0, 0, 0.5);
+            background: var(--artic_bg);
             padding: 20px;
             border-radius: 10px;
             display: inline-block;
             box-shadow: 0px 16px 30px hsla(0, 0%, 0%, .25);
             width: 100%;
         }
+        .setting_button_section {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          
+        }
         .setting_button {
-            padding: 10px 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: space-between;
+          width: 16rem;
+            padding: 16px 20px;
             margin: 10px;
             font-size: 16px;
-            border: none;
+            border: 1px solid var(--jet);
             cursor: pointer;
             border-radius: 5px;
             transition: 0.3s;
-            background: hsl(45, 100%, 72%);
-            color: black;
+            background: var(--artic_bg); 
+            color: var(--white2);
+            
         }
 /*CONTACT*/
 
@@ -1233,10 +1260,10 @@ textarea.form-input {
 @media (min-width: 1250px) {
 
     body::-webkit-scrollbar { width: 20px; }
-    body::-webkit-scrollbar-track { background: var(--smoky-black); }
+    body::-webkit-scrollbar-track { background: var(--body_bg); }
 
     body::-webkit-scrollbar-thumb {
-        border: 5px solid var(--smoky-black);
+        border: 5px solid var(--body_bg);
         background: hsla(0, 0%, 100%, .1);
         border-radius: 20px;
         box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, .11), inset -1px -1px 0 hsla(0, 0%, 100%, .11);
@@ -1471,7 +1498,7 @@ hr:before {
 .blur {
     position: absolute;
     filter: blur(80px); /* بديل للـ box-shadow */
-    background: #1d4ed8;
+    background: var(--blue_ball);
     width: 200px; /* عرض محدد */
     height: 200px;
     border-radius: 50%;
@@ -1483,7 +1510,7 @@ hr:before {
     position: absolute;
     left: 0;
     filter: blur(50px);
-    background: #1d4ed8;
+    background: var(--blue_ball);
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -1542,7 +1569,7 @@ svg {
             pointer-events: none;
         }
         .node circle {
-            fill: #282828;
+            fill: var(--node_bg);
             stroke: #ffd700;
             stroke-width: 2;
             cursor: grab;
@@ -1553,8 +1580,8 @@ svg {
             stroke: white;
         }
         .main-node rect {
-            fill: #282828;
-            stroke: #00000040;
+            fill: var(--node_bg);
+            stroke: var(--node_bg);
             stroke-width: 2;
             rx: 30;
             ry: 30;
@@ -1741,6 +1768,7 @@ svg {
 }
 .heading {
   z-index: 2;
+  color: var(--white2);
   transition: 0.4s ease-in-out;
 }
 .card:hover .heading {
@@ -1842,7 +1870,7 @@ svg {
 }
 .icons ion-icon,.icons .bx{
   font-size: 2rem;
-  color: white;
+  color: var(--white2);
 }
 @keyframes shootingStar {
   0% {
@@ -2460,4 +2488,82 @@ svg {
   margin: 0 auto;
   direction: ltr;
   text-align: right;
+}
+/* From Uiverse.io by PhyoTP */ 
+/* Minecraft switch made by: csozi | Website: english.csozi.hu*/
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 0.3em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #900c3f;
+  transition: 0.4s;
+}
+
+.off {
+  position: absolute;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background-color: transparent;
+  border-radius: 20px;
+  transition: 0.4s;
+  image-rendering: pixelated;
+  opacity: 1;
+  left: 0;
+  bottom: -1.6rem;
+}
+
+
+.on {
+  position: absolute;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background-color: transparent;
+  border-radius: 20px;
+  transition: 0.4s;
+  image-rendering: pixelated;
+  opacity: 0;
+  left: 0;
+  bottom: -1.6rem;
+}
+
+.switch input:checked + .slider {
+  background-color: red;
+}
+
+  
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #c70039;
+}
+
+.switch input:checked ~ .off {
+  transform: translateX(2em);
+  opacity: 0;
+}
+
+.switch input:checked ~ .on {
+  transform: translateX(2em);
+  opacity: 1;
 }

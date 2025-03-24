@@ -181,6 +181,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // التحكم بالصوت والثيم
 const soundButton = document.getElementById("sound-toggle");
 const themeButton = document.getElementById("theme-toggle");
+soundButton.checked = localStorage.getItem("sound") === "enable";
+themeButton.checked = localStorage.getItem("theme") === "light";
 const body = document.body;
 
 let soundEnabled = localStorage.getItem("sound") === "enable";
@@ -248,7 +250,7 @@ if (soundButton) {
         soundEnabled = !soundEnabled;
         localStorage.setItem("sound", soundEnabled ? "enable" : "disable");
         updateButtons();
-        playSound(soundEnabled ? "up.mp3" : "down.mp3");
+        playSound(soundEnabled ? "enable.mp3" : "disable.mp3");
     });
 }
     // إنشاء مشهد ثلاثي الأبعاد بسيط لتأثير الخلفية

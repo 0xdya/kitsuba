@@ -49,7 +49,7 @@ const data = {
         { name: "إبلاغ" },
         { name: "التعليقات",
       children: [
-        { name: "اكتب تعليق"
+        { name: "علِّق"
         }
       ]}
       ]
@@ -156,7 +156,7 @@ node.each(function(d) {
     .attr("dy", ".35em")
     .attr("text-anchor", "middle")
     .style("font-size", "14px")
-    .style("fill", "#fff")
+    .style("fill", "var(--white2)")
     .text(d.data.name);
 });
 
@@ -207,10 +207,6 @@ function playSound(file) {
 }
 
 // زر التحكم بالصوت
-document.getElementById("toggleSound").addEventListener("click", () => {
-  soundEnabled = !soundEnabled;
-  playSound(soundEnabled ? "on.wav" : "off.wav");
-});
 
 // تحسين التعامل مع تغيير حجم النافذة باستخدام تقنية debounce
 let resizeTimer;
