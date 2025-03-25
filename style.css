@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Noto+Kufi+Arabic:wght@100..900&family=Zain:wght@400;700&&family=Ruwudu:wght@400;500;600;700&display=swap');
-/*
-body::before {
+
+body.light-mode::before {
   --size: 45px;
   --line: color-mix(in lch, canvasText, transparent 85%);
   content: '';
@@ -10,23 +10,25 @@ body::before {
   position: absolute;
   background: linear-gradient(
         90deg,
-        white 1px,
+        #55527C 1px,
         transparent 1px var(--size)
       )
       50% 50% / var(--size) var(--size),
-    linear-gradient(white 1px, transparent 1px var(--size)) 50% 50% /
+    linear-gradient(#55527C 1px, transparent 1px var(--size)) 50% 50% /
       var(--size) var(--size);
-  -webkit-mask: linear-gradient(-25deg, transparent 30%, white);
-          mask: linear-gradient(-25deg, transparent 30%, white);
+  -webkit-mask: linear-gradient(-25deg, transparent 30%, red);
+          mask: linear-gradient(-25deg, transparent 30%, red);
   top: 0;
   transform-style: flat;
   z-index: -1;
   pointer-events: none;
 }
-*/
+
 :root {
     --artic_bg: rgba(30, 30, 30, 0.5);
+    --artic_border: 1px solid #111;
     --node_bg: rgb(30, 30, 30);
+    --node_link: #ffd700;
         --artic_shadow: 4px 8px 24px rgba(0, 0, 0, 0.25);
     --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
     --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
@@ -76,14 +78,16 @@ body::before {
     --transition2: .5s ease-in-out;
 }
 body.light-mode {
-  --node_bg: #FDF7F4;
+  --node_bg: #ffd7aa;
+  --node_link: #000;
   --light-gray: #333;
   --shadow1: 0px 24px 80px #8EB486;
   --shadow2: transparent;
   --shadow3: transparent;
     --orange-yellow-crayola: #997C70;
     --vegas-gold: #997C70;
-    --artic_bg: #FDF7F4;
+    --artic_bg: #F8E9DA;
+    --artic_border: 1px solid #555;
     --artic_shadow: transparent;
     --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 90%) 3%, hsl(0, 0%, 100%) 97%);
     --bg-gradient-jet: linear-gradient(to bottom right, hsla(0, 0%, 80%, .251) 3%, hsla(0, 0%, 100%, 0) 100%), hsl(0, 0%, 95%);
@@ -93,7 +97,7 @@ body.light-mode {
     --onyx: hsl(0, 0%, 95%);
     --eerie-black1: hsl(0, 0%, 98%);
     --eerie-black2: hsla(0,0%,99%,0.325);
-    --body_bg: #FDF7F4;
+    --body_bg: #f4dec7;
     --white1: hsl(0, 0%, 10%);
     --white2: hsl(0, 0%, 20%);
     --blue_ball: transparent;
@@ -149,7 +153,7 @@ main {
 
 .sidebar, article {
     background: var(--artic_bg); 
-    border: 1px solid var(--jet);
+    border: var(--artic_border);
     border-radius: 20px;
     box-shadow: var(--artic_shadow);
     z-index: 1;
@@ -1555,7 +1559,7 @@ svg {
 }
         .link {
             fill: none;
-            stroke: #ffd700;
+            stroke: var(--node_link);
             stroke-width: 2;
         }
         .draw_link{
@@ -1570,7 +1574,7 @@ svg {
         }
         .node circle {
             fill: var(--node_bg);
-            stroke: #ffd700;
+            stroke: var(--node_link);
             stroke-width: 2;
             cursor: grab;
             transition: 0.3s;
@@ -2566,4 +2570,57 @@ svg {
 .switch input:checked ~ .on {
   transform: translateX(2em);
   opacity: 1;
+}
+.hidden{
+  display: none;
+}
+/* From Uiverse.io by elijahgummer */ 
+.golden-button {
+  touch-action: manipulation;
+  display: inline-block;
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  height: 2.75em;
+  width: 100%;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 1em;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border: 1px solid #a55d07;
+  color: rgb(120, 50, 5);
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
 }

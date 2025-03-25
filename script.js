@@ -290,3 +290,191 @@ if (navigator.userAgent.includes("Instagram")) {
 AOS.init({
   once: true // يجعل الأنميشن يحدث مرة واحدة فقط
 });
+
+
+// Contact
+
+// ✅ دالة عرض التنبيهات
+function showAlert(message, type = 'info', duration = 3000) {
+    const alertsContainer = document.getElementById('alerts-container');
+
+    // إنشاء عنصر التنبيه
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert ${type}`;
+    alertDiv.innerHTML = `
+        <span>${message}</span>
+        <span class="close-btn">&times;</span>
+    `;
+
+    // إضافة التنبيه إلى الشاشة
+    alertsContainer.appendChild(alertDiv);
+
+    // إغلاق التنبيه عند الضغط على زر الإغلاق
+    alertDiv.querySelector('.close-btn').addEventListener('click', () => {
+        alertDiv.style.opacity = '0';
+        setTimeout(() => alertDiv.remove(), 500);
+    });
+
+    // إخفاء التنبيه تلقائيًا بعد المدة المحددة
+    setTimeout(() => {
+        alertDiv.style.opacity = '0';
+        setTimeout(() => alertDiv.remove(), 500);
+    }, duration);
+}
+// ✅ دالة لتفريغ الحقول بعد الإرسال
+function clearForm(formId) {
+    document.querySelector(`#${formId} input[name="username"]`).value = '';
+    document.querySelector(`#${formId} textarea[name="message"]`).value = '';
+
+    // إذا كان النموذج الأول، امسح حقول الملفات أيضًا
+    if (formId === 'contactForm1') {
+        document.querySelector(`#${formId} input[type="file"]`).value = '';
+        document.getElementById('file-name1').textContent = 'تحميل ملف';
+        document.getElementById('image-name1').textContent = 'تحميل صورة';
+    }
+}
+
+// ✅ دالة لجلب عنوان IP
+async function getIPAddress() {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip;
+    } catch (error) {
+        console.error('Error fetching IP address:', error);
+        return 'غير متوفر';
+    }
+}
+
+// ✅ معالجة النموذج الأول (مع رفع الملفات)
+document.getElementById('contactForm1').addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username1').value.trim();
+    const message = document.getElementById('message1').value.trim();
+    const fileInput = document.getElementById('file1');
+    const imageInput = document.getElementById('image1');
+
+    const file = fileInput.files.length > 0 ? fileInput.files[0] : null;
+    const image = imageInput.files.length > 0 ? imageInput.files[0] : null;
+    const ipAddress = await getIPAddress();
+
+    if (!username || !message) {
+        showAlert("❌ يرجى ملء جميع الحقول!", "error");
+        return;
+    }
+
+    let endpoint = "sendMessage";
+    let url = `https://api.telegram.org/bot7741815017:AAGTPiZID3RsHP-H9N67NVXKlrTygrMh-VY/${endpoint}`;
+    let formData;
+
+    if (file) {
+        endpoint = "sendDocument";
+        url = `https://api.telegram.org/bot7741815017:AAGTPiZID3RsHP-H9N67NVXKlrTygrMh-VY/${endpoint}`;
+        formData = new FormData();
+        formData.append('chat_id', 5962064921);
+        formData.append('caption', `👤 الاسم: ${username}\n💬 الرسالة: ${message}\n🌐 IP: ${ipAddress}`);
+        formData.append('document', file);
+    } else if (image) {
+        endpoint = "sendPhoto";
+        url = `https://api.telegram.org/bot7741815017:AAGTPiZID3RsHP-H9N67NVXKlrTygrMh-VY/${endpoint}`;
+        formData = new FormData();
+        formData.append('chat_id', 5962064921);
+        formData.append('caption', `👤 الاسم: ${username}\n💬 الرسالة: ${message}\n🌐 IP: ${ipAddress}`);
+        formData.append('photo', image);
+    } else {
+        formData = JSON.stringify({
+            chat_id: 5962064921,
+            text: `👤 الاسم: ${username}\n💬 الرسالة: ${message}\n🌐 IP: ${ipAddress}`
+        });
+    }
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: formData,
+            headers: file || image ? {} : { "Content-Type": "application/json" }
+        });
+
+        const data = await response.json();
+        console.log("📨 Telegram Response:", data);
+
+        if (data.ok) {
+            showAlert("✅ تم إرسال البلاغ بنجاح!", "success");
+            clearForm("contactForm1");
+        } else {
+            showAlert(`❌ فشل الإرسال: ${data.description || "خطأ غير معروف"}`, "error");
+        }
+    } catch (error) {
+        console.error("❌ خطأ أثناء الإرسال:", error);
+        showAlert("❌ حدث خطأ أثناء الإرسال!", "error");
+    }
+});
+
+// ✅ معالجة النموذج الثاني (بدون رفع ملفات)
+        document.getElementById('messageForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const statusMessage = document.getElementById('status-message');
+            statusMessage.textContent = "🚀 جاري الإرسال...";
+            statusMessage.style.color = "blue";
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const userMessage = document.getElementById('userMessage').value.trim();
+
+            if (!fullName || !userMessage) {
+                statusMessage.textContent = "❌ يرجى ملء جميع الحقول!";
+                statusMessage.style.color = "red";
+                return;
+            }
+
+            const ipAddress = await getIPAddress();
+
+            const botToken = "8182375548:AAEwMmAtlekkMM_12SerT66cc4e2DxJJv3g"; // استبدله بالتوكن الفعلي
+            const chatID = 5962064921; // استبدله بـ chat_id الفعلي
+
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: chatID,
+                        text: `👤 الاسم: ${fullName}\n💬 الرسالة: ${userMessage}\n🌐 IP: ${ipAddress}`
+                    })
+                });
+
+                const data = await response.json();
+                console.log("📨 Telegram Response:", data);
+
+                if (data.ok) {
+                    statusMessage.textContent = "✅ تم إرسال الرسالة بنجاح!";
+                    statusMessage.style.color = "green";
+                    document.getElementById('messageForm').reset();
+                } else {
+                    statusMessage.textContent = "❌ فشل في الإرسال: " + (data.description || "خطأ غير معروف");
+                    statusMessage.style.color = "red";
+                }
+            } catch (error) {
+                console.error("❌ Error:", error);
+                statusMessage.textContent = "❌ حدث خطأ أثناء الإرسال!";
+                statusMessage.style.color = "red";
+            }
+        });
+
+        async function getIPAddress() {
+            try {
+                const res = await fetch('https://api64.ipify.org?format=json');
+                const data = await res.json();
+                return data.ip;
+            } catch (error) {
+                console.error("❌ Error fetching IP:", error);
+                return "غير معروف";
+            }
+        }
+
+// دالة عرض التنبيهات
+function showAlert(message, type) {
+    alert(message);
+}

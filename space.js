@@ -21,14 +21,13 @@ const CONFIG = {
 const data = {
   name: "في هذا الموقع",
   children: [
-    { name: "الإعدادات" },
     { name: "بلوج" },
+    { name: "الإعدادات" },
     { name: "KBH" },
     {
       name: "السيرة",
       children: [
         { name: "حساباتي" },
-        { name: "kitsuba" },
         {
           name: "المشاريع",
           children: [
@@ -40,7 +39,8 @@ const data = {
             { name: "شعر"}
               ]}
           ]
-        }
+        },
+        { name: "kitsuba" },
       ]
     },
     {
@@ -48,12 +48,9 @@ const data = {
       children: [
         { name: "إبلاغ" },
         { name: "التعليقات",
-      children: [
-        { name: "علِّق"
         }
-      ]}
       ]
-    }
+    },
   ]
 };
 
