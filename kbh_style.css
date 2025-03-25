@@ -92,7 +92,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../public/bg.webp");
+  background-image: url("./kbh/bg.webp");
   background-repeat: no-repeat;
   z-index: -1;
   filter: blur(5px);
@@ -602,7 +602,7 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 
 @media (width <=640px) {
   .kitsuba_bug_hunter_container::before {
-background-image: url("../public/bg7.jpg");    margin: -2px;
+background-image: url("./kbh/bg7.jpg");    margin: -2px;
     filter: blur(8px);
     background-blend-mode: darken
   background-color: #1a1a2e;
