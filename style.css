@@ -81,6 +81,7 @@ body.light-mode {
   --node_bg: #ffd7aa;
   --node_link: #000;
   --light-gray: #333;
+  --light-gray70: #777;
   --shadow1: 0px 24px 80px #8EB486;
   --shadow2: transparent;
   --shadow3: transparent;
@@ -350,24 +351,13 @@ article { display: none; }
     border-radius: 15px 0;
     font-size: 20px;
     color: var(--orange-yellow-crayola);
-    background: var(--border-gradient-onyx);
-    padding: 10px;
-    box-shadow: var(--shadow2);
+    padding: 10px ;
     transition: var(--transition1);
     z-index: 1;
 }
 
-    .info-more-btn::before {
-        content: '';
-        position: absolute;
-        inset: 1px;
-        border-radius: inherit;
-        background: var(--bg-gradient-jet);
-        transition: var(--transition1);
-        z-index: -1;
-    }
 
-        .info-more-btn:hover, .info-more-btn:focus { background: var(--bg-gradient-yellow1); }
+    
         .info-more-btn:hover::before, .info-more-btn:focus::before { background: var(--bg-gradient-yellow2); }
 
     .info-more-btn span { display: none; }
@@ -1032,7 +1022,7 @@ textarea.form-input {
             font-size: var(--fs8);
         }
 
-        .info-more-btn ion-icon { display: none; }
+        .info-more-btn i {display: none; }
 
     .separator { margin: 32px 0; }
 
@@ -1493,7 +1483,6 @@ hr:before {
     background-size: cover;
     background-position: center;
     z-index: 0;
-
     mask-image: url(ink_lv2.gif);
     mask-size: cover;
     mask-position: center;
@@ -1990,7 +1979,7 @@ svg {
             color: #f5c518;
             font-size: 1.2rem;
         }
-        .date {
+        .date_style  {
             position: absolute;
             bottom: 14px;
             right: 1.3rem;
@@ -1998,7 +1987,7 @@ svg {
             color: #b0b0b0;
 
         }
-        .bx-time-five{
+        .bx_time_style{
           position: absolute;
           bottom: 18px;
           right: 0;
@@ -2624,3 +2613,144 @@ svg {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
     inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
 }
+/* chi3r */
+.chi3r {
+    
+    border: var(--artic_border);
+    border-radius: 20px;
+    box-shadow: var(--artic_shadow);
+    z-index: 1;
+    padding: 15px;
+    color: #111 !important;
+}
+.chi3r::before {
+  content: "";
+  position: fixed;
+  margin: -15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./img/chi3r7.jpg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: blur(5px);
+  background-color: rgba(0, 0, 0, .5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center
+}
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap');
+   @font-face {
+    font-family: dyaa;
+    src: url(اليد.otf);
+}
+
+        .chi3r_section {
+            box-sizing: border-box;
+            direction: rtl;
+            font-family: "dyaa";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            text-align: right;
+            padding: 20px 0;
+        }
+
+        .chi3r_container {
+          background: #F8E9DA; 
+            border: 1px dashed #333;
+            padding: 0 8px 12px;
+            margin: 6rem 1rem 0;
+            border-radius: 15px;
+           transition: 0.3s;
+           width: 100%;
+           max-width: 400px;
+           position: relative;
+        }
+        
+        .chi3r_card{
+          padding: 2rem 0 0;
+          border-top: 1px solid#00000033;
+          border-bottom: 1px solid #00000033;
+        }
+
+      .chi3r_card_title {
+            background: #111;
+            color: rgb(156 220 254);
+            padding: 25px;
+            margin-top: -6rem;
+            border-radius: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 14px;
+            line-height: 1;
+            white-space: pre-wrap;
+            text-align: right; /* المحافظة على اتجاه النص */
+            direction: rtl; /* إجبار اتجاه النص */
+        }
+
+        .line p, .line{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .number {
+            color: rgba(255, 255, 255, 0.2);
+            width: 20px;
+            text-align: right;
+        }
+
+        .keyword { color: #ff79c6; } /* كلمات محجوزة */
+        .function { color: rgb(86 156 214); } /* أسماء الدوال */
+        .symbol { color: #8be9fd; } /* الرموز */
+        .string { color: rgb(182 206 168); } /* النصوص */
+        .brace { color: #bd93f9; } /* الأقواس */
+        .italic { font-style: italic; }
+        .indent-1 { margin-right: 16px; }
+        .indent-2 { margin-right: 60px; }
+        .indent-3 { margin-right: 90px; }
+.editor-content .color-0 {
+  color: rgb(86 156 214);
+}
+
+.editor-content .color-1 {
+  color: rgb(182 206 168);
+}
+
+.editor-content .color-2 {
+  color: rgb(156 220 254);
+}
+
+.editor-content .color-3 {
+  color: rgb(207 146 120);
+}
+
+        .chi3r_1 {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+
+        .author {
+            margin: 32px 0 8px;
+            font-size: 18px;
+            color: #111;
+        }
+        .chi3r_2{
+          margin: 0 3rem 2rem 0;
+        }
+        .sen{
+          position: absolute;
+          left: 12px;
+          bottom: -28px;
+        }
+    

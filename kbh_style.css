@@ -22,7 +22,7 @@
 
 .kitsuba_bug_hunter_display-name,
 .kitsuba_bug_hunter_username {
-  color: var(--text-color)
+  color: var(--white2)
 }
 
 
@@ -33,7 +33,6 @@
   --primary-h-bottom: 212deg;
   --primary-s-bottom: 58%;
   --primary-l-bottom: 44%;
-  --text-color: black;
   --box-shadow-color: rgba(0, 0, 0, 0.1)
 }
 
@@ -74,7 +73,14 @@
 
 
 .kitsuba_bug_hunter_box-color {
-  background: linear-gradient(to bottom, hsl(var(--primary-h-top), var(--primary-s-top), var(--primary-l-top)), hsl(var(--primary-h-bottom), var(--primary-s-bottom), var(--primary-l-bottom)))
+  
+  border: 1px solid #ffffff22;
+  background-color: #282c34;
+  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: .7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .kitsuba_bug_hunter_container {
@@ -390,7 +396,7 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 .kitsuba_bug_hunter_body .title-body,
 .kitsuba_bug_hunter_pronouns {
   font-size: 12px;
-  color: var(--text-color)
+  color: var(--white2)
 }
 
 .kitsuba_bug_hunter_pronouns {
@@ -451,8 +457,14 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 }
 
 .kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol {
-  background: linear-gradient(to bottom, hsl(var(--primary-h-top), var(--primary-s-top), var(--primary-l-top)), hsl(var(--primary-h-bottom), var(--primary-s-bottom), var(--primary-l-bottom)));
-  --primary-l-top: 96%;
+
+  border: 1px solid #ffffff22;
+  background-color: #282c34;
+  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: .7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);  --primary-l-top: 96%;
   --primary-l-bottom: 96%;
   display: flex;
   -webkit-box-align: center;
@@ -468,7 +480,7 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 }
 
 .kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol span {
-  color: var(--text-color);
+  color: var(--white2);
   margin-left: 4px;
   margin-right: 4px
 }
@@ -496,7 +508,7 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 }
 
 .kitsuba_bug_hunter_platform-username {
-  color: var(--text-color);
+  color: var(--white2);
   font-size: .9em;
   font-weight: 600;
   margin-right: 10px;
