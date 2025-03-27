@@ -22,11 +22,12 @@
 
 .kitsuba_bug_hunter_display-name,
 .kitsuba_bug_hunter_username {
-  color: var(--white2)
+  color: var(--text-color)
 }
 
 
 :root {
+    --text-color: black;
   --primary-h-top: 206deg;
   --primary-s-top: 41%;
   --primary-l-top: 88%;
@@ -73,14 +74,7 @@
 
 
 .kitsuba_bug_hunter_box-color {
-  
-  border: 1px solid #ffffff22;
-  background-color: #282c34;
-  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
-  box-shadow: 0 7px 20px 5px #00000088;
-  border-radius: .7rem;
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  background: linear-gradient(to bottom, hsl(var(--primary-h-top), var(--primary-s-top), var(--primary-l-top)), hsl(var(--primary-h-bottom), var(--primary-s-bottom), var(--primary-l-bottom)))
 }
 
 .kitsuba_bug_hunter_container {
@@ -396,7 +390,7 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 .kitsuba_bug_hunter_body .title-body,
 .kitsuba_bug_hunter_pronouns {
   font-size: 12px;
-  color: var(--white2)
+  color: var(--text-color)
 }
 
 .kitsuba_bug_hunter_pronouns {
@@ -457,14 +451,8 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 }
 
 .kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol {
-
-  border: 1px solid #ffffff22;
-  background-color: #282c34;
-  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
-  box-shadow: 0 7px 20px 5px #00000088;
-  border-radius: .7rem;
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);  --primary-l-top: 96%;
+  background: linear-gradient(to bottom, hsl(var(--primary-h-top), var(--primary-s-top), var(--primary-l-top)), hsl(var(--primary-h-bottom), var(--primary-s-bottom), var(--primary-l-bottom)));
+  --primary-l-top: 96%;
   --primary-l-bottom: 96%;
   display: flex;
   -webkit-box-align: center;
@@ -480,7 +468,7 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 }
 
 .kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol span {
-  color: var(--white2);
+  color: var(--text-color);
   margin-left: 4px;
   margin-right: 4px
 }
@@ -508,7 +496,7 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 }
 
 .kitsuba_bug_hunter_platform-username {
-  color: var(--white2);
+  color: var(--text-color);
   font-size: .9em;
   font-weight: 600;
   margin-right: 10px;
@@ -696,7 +684,7 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: var(--white2);
+    color: var(--text-color);
    }
 
    /* تصميم التنبيهات العصري */
@@ -767,7 +755,7 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
     flex-direction: row;
     gap: 10px;
     margin: 8px 0 24px;
-    color: var(--white2);
+    color: var(--text-color);
    }
 
    /* From Uiverse.io by csemszepp */
