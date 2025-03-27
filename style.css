@@ -2648,23 +2648,6 @@ svg {
   background-size: cover;
   background-position: center
 }
-.root::before {
-  content: "";
-  position: fixed;
-  margin: -15px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("./img/magisk.jpg");
-  background-repeat: no-repeat;
-  z-index: -1;
-  filter: blur(5px);
-  background-color: rgba(0, 0, 0, .5);
-  background-blend-mode: darken;
-  background-size: cover;
-  background-position: center
-}
 
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap');
    @font-face {
@@ -2784,4 +2767,20 @@ svg {
           left: 12px;
           bottom: -28px;
         }
-    
+    .root::before {
+  content: "";
+  position: fixed;
+  margin: -15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./img/magisk.jpg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: blur(5px);
+  background-color: rgba(0, 0, 0, .5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center
+}
