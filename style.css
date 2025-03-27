@@ -651,10 +651,19 @@ mark {
     color: var(--light-gray);
     font-size: var(--fs6);
     font-weight: var(--fw300);
-    text-transform: capitalize;
+    text-align: right;
     width: 100%;
-    padding: 8px 10px;
+    padding: 8px 40px 0 0;
     border-radius: 8px;
+}
+.navbar-link::before {
+    content: "✧"; /* يمكنك تغييره لأي رمز سهم آخر */
+    position: relative;
+    right: -16px; /* يتحكم في بعد السهم عن الحافة اليسرى */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--fs6);
+    color: var(--light-gray);
 }
 
     .select-item button:hover { --eerie-black2: hsl(240, 2%, 20%); }
@@ -2615,7 +2624,6 @@ svg {
 }
 /* chi3r */
 .chi3r {
-    
     border: var(--artic_border);
     border-radius: 20px;
     box-shadow: var(--artic_shadow);
@@ -2640,11 +2648,32 @@ svg {
   background-size: cover;
   background-position: center
 }
+.root::before {
+  content: "";
+  position: fixed;
+  margin: -15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./img/magisk.jpg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: blur(5px);
+  background-color: rgba(0, 0, 0, .5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center
+}
 
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap');
    @font-face {
     font-family: dyaa;
     src: url(اليد.otf);
+}
+   @font-face {
+    font-family: المصمك;
+    src: url(المصمك.otf);
 }
 
         .chi3r_section {
@@ -2679,6 +2708,7 @@ svg {
         }
 
       .chi3r_card_title {
+    font-family: "المصمك";
             background: #111;
             color: rgb(156 220 254);
             padding: 25px;
