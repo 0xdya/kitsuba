@@ -2749,6 +2749,7 @@ svg {
           margin: 0 3rem 2rem 0;
         }
         .sen{
+          width: 128px;
           position: absolute;
           left: 12px;
           bottom: -28px;
