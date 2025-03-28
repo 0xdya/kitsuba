@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>dyaa edin </title>
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./style2.css">
 	<link rel="stylesheet" href="./kbh_style.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://d3js.org/d3.v7.min.js"></script>
@@ -19,12 +20,20 @@
 </head>
 
 <body>
+  <div id="preloader">
+    <div class="spinner"></div>
+</div>
 	<main dir="rtl">
 		<aside class="sidebar " data-sidebar>
 			<div class="sidebar-info">
 				<figure  class="avatar-box"> <img data-sound="cave.mp3" src="img/f3.jpg" alt="avatar" width="80"> </figure>
 				<div class="info-content">
-					<h1 class="name" title="ملوك ضياء الدين">ملوك ضياء الدين</h1>
+					<h1 class="name" title="ملوك ضياء الدين">ملوك ضياء الدين  
+					<span class="check">
+					  
+					<i class='bx bxs-badge-check'></i>
+					</span>
+					</h1>
 					<p dir="ltr" class="title">@KitsuBa</p>
 				</div>
 				<button class="info-more-btn" data-sidebar-btn> <span>Show Contacts</span>
@@ -84,7 +93,7 @@
 					</li>
 					<li class="social-item">
 						<a href="#" class="social-link">
-							<ion-icon name="logo-discord"></ion-icon>
+							<i class='bx bxl-'></i>
 						</a>
 					</li>
 					<li class="social-item">
@@ -124,15 +133,30 @@
 						<button data-sound="pop2.mp3" class="navbar-link" data-nav-link>الإعدادات</button>
 					</li>
 				</ul>
-			</nav> <span class="blur"></span>
+			</nav> <span class="blur">
+			</span>
 			<article class="about active" data-page="الرئيسية">
 				<div class="banner">
 					<div class="content">
 						<header>
-							<h2 data-aos-duration="1000" data-aos-delay="0" data-aos="zoom-in-right" class="h2 article-title">من أنا؟</h2> </header>
+							<h2 data-aos-duration="1000" data-aos-delay="0" data-aos="zoom-in-left" class="h2 article-title">حي الله من زارنا 👋🏻
+							</h2> 
+						  <img data-nav-link data-target="achievement" data-secret-nav id="shakeButton" data-aos-duration="1000" data-aos-delay="500" data-aos="zoom-in-right" class="bmo" src="/bmo.png">
+							
+							</header>
 						<section  class="about-text">
-							<p data-aos-duration="1000" data-aos-delay="1000" data-aos="fade-up"> أنا ضياء الدين "kitsuba"، مطوّر مواقع مستقل، رسام، ومصمم. أمتلك خبرة تتجاوز ثلاث سنوات في تطوير المواقع، حيث أعمل على بناء واجهات حديثة تجمع بين الأداء، الأمان، والجمالية🍃 . فهدفي الوصول إلى تجربة مستخدم فائقة السلاسة وخالية من الأخطاء البرمجية التقنية، كما أنني أدير أزيد من أربعة عشر مشروعًا مستقلاً. </p>
-							<p data-aos-duration="1000" data-aos-delay="1500" data-aos="fade-up"> إلى جانب البرمجة، أنا شاعر أميل إلى الشعر الإسلامي والوعظي، وأسعى من خلاله إلى نشر قيم و أخلاق السلف الصالح من الصحابة بأسلوب أدبي سهل الحفظ و الاستعاب. وقد ألفت كتابًا بعنوان "المنهاج المبين في مسالك المتقين"، وهو نونية شعرية تضم نحو 130 بيتًا، تناولت فيها اصول التوحيد و العقيدة وأمور دنيوية تهم المسلمين. </p>
+ <div data-aos-duration="1000" data-aos-delay="500" data-aos="fade-up"class="border2">
+							<p >  أنا ضياء الدين – "kitsuba" – 
+ </p>
+</div>
+ <div data-aos-duration="1000" data-aos-delay="800" data-aos="fade-up"class="border">
+							<p >
+							  بخبرة تزيد عن ثلاث سنوات في تطوير واجهات المستخدم وإدارة أكثر من 14 مشروعًا  مستقلاً، أعمل على تقديم مواقع حديثة بتصاميم عصرية مع الحرص على أعلى معاير السلاسة و الأمان . 
+							  .</p>
+							<p>
+							  بجانب المواقع، أنا شاعر وقد ألفت كتابان شعريان ستجدهما في الموقع، كما أنني رسام سابق بأسلوب الحر المسمى العبثي و "fanart" وإضافة على ذلك عندي شغف بتخصيص أجهزة الأندرويد، سواء بصنع إضافات الروت أو تعديل على رومات الأندرويد لتحقيق تجربة فريدة.
+							  .</p>
+					</div>
 						</section>
 					</div>
 				</div> <span class="blur2"></span>
@@ -154,10 +178,6 @@
 						<svg></svg>
 					</div>
 				</section>
-				<hr>
-					<div data-aos-duration="1000" data-aos-delay="200" data-aos="fade-up" class="note"><br>
-					  <img data-nav-link data-target="achievement" data-secret-nav id="shakeButton"class="fox"width="300"src="img/33.png">
-					</div>
 			</article>
 			<article class="resume " data-page="السيرة">
 				<header>
@@ -541,7 +561,7 @@
 								<ion-icon name="logo-github"></ion-icon>
 							</a>
 							<a href="https://x.com/dyaa_dev">
-								<ion-icon name="logo-twitter"></ion-icon>
+								<i class='bx bxl-twitter'></i>
 							</a>
 							<a href="#"> <i class='bx bxl-discord-alt'></i> </a>
 							<a href="#"> <i class='bx bxl-youtube'></i> </a>

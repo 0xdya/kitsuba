@@ -1,3 +1,22 @@
+.kbh_title {
+    position: relative;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+}
+.kbh_title span{
+  color: #fc2;
+  margin-left: 12px;
+  font-size: 32px;
+  margin-top: -9px;
+}
+.kbh {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
 .kitsuba_bug_hunter_avatar,
 .kitsuba_bug_hunter_badges,
 .kitsuba_bug_hunter_badges .kitsuba_bug_hunter_badges-right,
@@ -690,7 +709,7 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
    /* تصميم التنبيهات العصري */
   
 /* صندوق التنبيهات العام */
-#alerts-container {
+.alerts_style {
     position: fixed;
     top: 20px;
     right: 20px;

@@ -1,3 +1,51 @@
+document.addEventListener("DOMContentLoaded", function () {
+AOS.init({
+  once: true // يجعل الأنميشن يحدث مرة واحدة فقط
+});
+
+    // تعطيل التمرير عند تحميل الصفحة
+    disableScroll();
+
+    window.addEventListener("load", function () {
+        let preloader = document.getElementById("preloader");
+        preloader.classList.add("preloader-hidden");
+
+        setTimeout(() => {
+            preloader.style.display = "none";
+            enableScroll(); // إعادة التمرير بعد اختفاء البريلودر
+        }, 600);
+    });
+});
+
+// تعطيل التمرير بالكامل
+function disableScroll() {
+    document.body.style.overflow = "hidden"; // إخفاء التمرير
+    document.body.style.height = "100vh"; // تثبيت الارتفاع
+    document.addEventListener("wheel", preventDefault, { passive: false });
+    document.addEventListener("touchmove", preventDefault, { passive: false });
+    document.addEventListener("keydown", preventArrowScroll);
+}
+
+// إعادة التمرير بعد اختفاء البريلودر
+function enableScroll() {
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
+    document.removeEventListener("wheel", preventDefault);
+    document.removeEventListener("touchmove", preventDefault);
+    document.removeEventListener("keydown", preventArrowScroll);
+}
+
+// منع التمرير باستخدام العجلة أو اللمس
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+// منع التمرير باستخدام لوحة المفاتيح
+function preventArrowScroll(e) {
+    if (["ArrowUp", "ArrowDown", "Space", "PageUp", "PageDown"].includes(e.code)) {
+        e.preventDefault();
+    }
+}
 'use strict';
 
 // فتح أو إغلاق الشريط الجانبي
@@ -287,9 +335,6 @@ if (soundButton) {
 if (navigator.userAgent.includes("Instagram")) {
     alert("قد تواجه مشاكل في عرض الموقع داخل متصفح Instagram. يُفضل فتحه في متصفح خارجي.");
 }
-AOS.init({
-  once: true // يجعل الأنميشن يحدث مرة واحدة فقط
-});
 
 
 // Contact
@@ -478,3 +523,38 @@ document.getElementById('contactForm1').addEventListener('submit', async functio
 function showAlert(message, type) {
     alert(message);
 }
+// ملاحظات حول الشعر
+document.getElementById("poetryAdviceForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let name = document.getElementById("poetryName").value || "مجهول";
+    let message = document.getElementById("poetryMessage").value;
+    let statusMessage = document.getElementById("poetryStatusMessage");
+    
+    let botToken = "7952561228:AAH5t_OgXBnyZ9Pi3zRXNPNuuGeLU4AtmjM"; // ضع توكن البوت الخاص بك هنا
+            let chatId = "5962064921"; // ضع رقم معرفك في تيليجرام
+
+    let text = `📩 *رسالة جديدة حول قصائدك*\n\n👤 *المرسل:* ${name}\n📝 *الرسالة:* ${message}`;
+    let url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
+
+    // عرض رسالة "جاري الإرسال..."
+    statusMessage.textContent = "📨 جاري الإرسال...";
+    statusMessage.className = "sending";
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                statusMessage.textContent = "✅ تم إرسال رسالتك بنجاح!";
+                statusMessage.className = "success";
+                document.getElementById("poetryAdviceForm").reset(); // مسح الحقول
+            } else {
+                statusMessage.textContent = "❌ فشل الإرسال، حاول مجددًا.";
+                statusMessage.className = "error";
+            }
+        })
+        .catch(error => {
+            statusMessage.textContent = "❌ تعذر الاتصال بالخادم.";
+            statusMessage.className = "error";
+        });
+});
