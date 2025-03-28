@@ -2784,3 +2784,48 @@ svg {
   background-size: cover;
   background-position: center
 }
+/* ملاحظات أبيات الشعر */
+#poetryAdviceForm{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sending { color: blue; }
+        .success { color: lime; }
+        .error { color: red; }
+        :root {
+  --main-line-color: hsl(234, 62%, 86%);
+  --side-line-color: hsl(350, 100%, 91%);
+  --paper-color: hsl(0, 15%, 95%);
+  --ink-color: hsl(0, 0%, 12%);
+  --line-thickness: 3px;
+  --top-space: 0.6rem;
+}
+
+.paper {
+  background: var(--paper-color);
+  margin: 0;
+  padding: calc(var(--top-space) - 0lh) 1rem 0 0;
+  font-size: 1.5rem;
+  text-indent: 18px;
+  line-height: 1.6;
+  color: var(--ink-color);
+  text-align: right;
+  background-image: 
+    
+    /*  The top space  */
+      linear-gradient(
+        var(--paper-color),
+        var(--paper-color) var(--top-space),
+        transparent var(--top-space)
+      ),
+    /* the blue lines */
+      repeating-linear-gradient(
+        transparent,
+        transparent calc(1lh - var(--line-thickness)),
+        var(--main-line-color) calc(1lh - var(--line-thickness)),
+        var(--main-line-color) 1lh,
+        transparent 1lh
+      );
+  box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
+}
