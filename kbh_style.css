@@ -16,6 +16,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    font-family: "Playpen Sans", cursive
 }
 .kitsuba_bug_hunter_avatar,
 .kitsuba_bug_hunter_badges,
@@ -101,6 +102,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-family: "Playpen Sans", cursive
 }
 
 .kitsuba_bug_hunter_container::before {
@@ -173,11 +175,17 @@
   object-fit: cover
 }
 
-.kitsuba_bug_hunter_avatar {
+.kitsuba_bug_hunter_avatar_ar {
   align-items: center;
   justify-content: center;
   top: 120px;
-  right: 16px
+  right: 1rem !important
+}
+.kitsuba_bug_hunter_avatar_en {
+  align-items: center;
+  justify-content: center;
+  top: 120px;
+  left: 1.2rem !important
 }
 
 .kitsuba_bug_hunter_badges,
@@ -353,7 +361,12 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
   padding: 2px;
   border-radius: 10px;
   top: 200px;
+}
+.kitsuba_bug_hunter_badges_ar{
   right: 154px
+}
+.kitsuba_bug_hunter_badges_en {
+  left: 134px
 }
 
 .kitsuba_bug_hunter_card,
@@ -393,6 +406,8 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
 .kitsuba_bug_hunter_display-name {
   font-size: 20px;
   font-weight: bolder
+
+  
 }
 
 .kitsuba_bug_hunter_username {
@@ -641,8 +656,13 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
 
   .kitsuba_bug_hunter_badges {
     top: 108px;
-    left: 0;
     flex-direction: row-reverse
+  }
+  .kitsuba_bug_hunter_badges_en {
+    right: 0;
+  }
+  .kitsuba_bug_hunter_badges_ar {
+    left: 0;
   }
 
   .kitsuba_bug_hunter_avatar {
