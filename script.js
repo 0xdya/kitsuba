@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
 AOS.init({
   once: true // يجعل الأنميشن يحدث مرة واحدة فقط
@@ -47,7 +48,6 @@ function preventArrowScroll(e) {
     }
 }
 
-
 // update card
     function makeDraggable(box) {
     let isDragging = false, offsetX, offsetY, posX = 0, posY = 0;
@@ -78,7 +78,13 @@ function timeSinceUpdate(lastUpdate) {
     let diffMs = now - lastUpdateDate;
     let diffHours = Math.floor(diffMs / (1000 * 60 * 60));
     let diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-    return `${diffHours} ساعة و ${diffMinutes} دقيقة`;
+    let diffSeconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+    
+    if (diffHours > 0) {
+        return `${diffHours} ساعة و ${diffMinutes} دقيقة`;
+    } else {
+        return `${diffMinutes} دقيقة و ${diffSeconds} ثانية`;
+    }
 }
 
 // تفعيل السحب على العنصر
