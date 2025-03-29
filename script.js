@@ -46,6 +46,80 @@ function preventArrowScroll(e) {
         e.preventDefault();
     }
 }
+
+
+// update card
+    function makeDraggable(box) {
+    let isDragging = false, offsetX, offsetY, posX = 0, posY = 0;
+
+    box.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - posX;
+        offsetY = e.clientY - posY;
+        box.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+            posX = e.clientX - offsetX;
+            posY = e.clientY - offsetY;
+            box.style.transform = `translate(${posX}px, ${posY}px)`;
+        }
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+        box.style.cursor = "grab";
+    });
+}
+function timeSinceUpdate(lastUpdate) {
+    let lastUpdateDate = new Date(lastUpdate);
+    let now = new Date();
+    let diffMs = now - lastUpdateDate;
+    let diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    let diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+    return `${diffHours} ساعة و ${diffMinutes} دقيقة`;
+}
+
+// تفعيل السحب على العنصر
+makeDraggable(document.getElementById("draggable-box"));
+    function fetchUpdateDetails() {
+        fetch("update-log.json")
+            .then(response => response.json())
+            .then(data => {
+                let updateHTML = `
+              
+               `;
+
+           updateHTML += `<div class="update_line">   <span class="variable update_margin1">lastUpdate</span>: <span class="string">"${data.lastUpdate}"</span>,<br></div>`;
+            updateHTML += ` <div class="update_line">  <span class="variable update_margin1">updateTime</span>: <span class="string" dir="rtl">"${timeSinceUpdate(data.lastUpdate)}"</span>,<br></div>`;
+
+                if (data.newFeatures.length > 0) {
+                    updateHTML += ` <div class="update_line"> <span class="variable update_margin1">newFeatures</span>: <span class="bracket">[</span></div>`;
+                    data.newFeatures.forEach(feature => {
+                        updateHTML += `  <div class="update_line">  <span class="string update_margin2">"${feature}"</span>,</div>`;
+                    });
+                    updateHTML += ` <div class="update_line"> <span class="bracket">]</span>,</div>`;
+                }
+
+                if (data.bugFixes.length > 0) {
+                    updateHTML += ` <div class="update_line"><span class="variable update_margin1">bugFixes</span>: <span class="bracket">[</span></div>`;
+                    data.bugFixes.forEach(fix => {
+                        updateHTML += `   <div class="update_line"> <span class="string update_margin2">"${fix}"</span>,</div>`;
+                    });
+                    updateHTML += `  <div class="update_line"><span class="bracket">]</span></div>`;
+                }
+                updateHTML += ``;
+                document.getElementById("update-details").innerHTML = updateHTML;
+            })
+            .catch(() => {
+                document.getElementById("update-details").textContent = "⚠️ فشل تحميل التحديثات!";
+            });
+    }
+    fetchUpdateDetails();
+    makeDraggable(document.getElementById("draggable-box"));
+    
+
 'use strict';
 
 // فتح أو إغلاق الشريط الجانبي
