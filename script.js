@@ -93,12 +93,9 @@ makeDraggable(document.getElementById("draggable-box"));
         fetch("update-log.json")
             .then(response => response.json())
             .then(data => {
-                let updateHTML = `
-              
-               `;
+                let updateHTML =`<div class="update_line">   <span class="variable update_margin1">updateDay</span>: <span class="string">"${data.datee}"</span>,<br></div>`;
 
-           updateHTML += `<div class="update_line">   <span class="variable update_margin1">lastUpdate</span>: <span class="string">"${data.lastUpdate}"</span>,<br></div>`;
-            updateHTML += ` <div class="update_line">  <span class="variable update_margin1">updateTime</span>: <span class="string" dir="rtl">"${timeSinceUpdate(data.lastUpdate)}"</span>,<br></div>`;
+            updateHTML += ` <div class="update_line">  <span class="variable update_margin1">updateBefore</span>: <span class="string" dir="rtl">"${timeSinceUpdate(data.lastUpdate)}"</span>,<br></div>`;
 
                 if (data.newFeatures.length > 0) {
                     updateHTML += ` <div class="update_line"> <span class="variable update_margin1">newFeatures</span>: <span class="bracket">[</span></div>`;
