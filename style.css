@@ -73,7 +73,7 @@ body.light-mode::before {
     --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
     --text-gradient-yellow: linear-gradient(to right, #58a6ff, rgba(167, 139, 250, 1));
 
-    --silder_img: url(https://github-production-user-asset-6210df.s3.amazonaws.com/74038190/242390524-0c7eb6ed-663b-4ce4-bfbd-18239a38ba1b.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250329%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250329T135012Z&X-Amz-Expires=300&X-Amz-Signature=9665347ec9d112117db1ff128a29d88522f95ef95206e03a3ec09db2181f8333&X-Amz-SignedHeaders=host);
+    --silder_img: url(img/banner.gif);
     --jet: hsl(0, 0%, 22%);
     --onyx: hsl(240, 1%, 17%);
     --eerie-black1: hsl(240, 2%, 13%);
