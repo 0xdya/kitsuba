@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Playpen+Sans:wght@100..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 /* البريلودر يغطي الشاشة بالكامل */
 #preloader {
     position: fixed;
@@ -35,8 +36,6 @@
     transition: opacity 0.6s ease-out;
     pointer-events: none;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Noto+Kufi+Arabic:wght@100..900&family=Zain:wght@400;700&&family=Ruwudu:wght@400;500;600;700&display=swap');
 
 body.light-mode::before {
   --size: 45px;
@@ -72,9 +71,9 @@ body.light-mode::before {
     --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
     --bg-gradient-yellow2: linear-gradient(135deg, hsla(45, 100%, 71%, .251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
     --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
-    --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+    --text-gradient-yellow: linear-gradient(to right, #58a6ff, rgba(167, 139, 250, 1));
 
-    --silder_img: url(nameplates/cityscape.png);
+    --silder_img: url(https://github-production-user-asset-6210df.s3.amazonaws.com/74038190/242390524-0c7eb6ed-663b-4ce4-bfbd-18239a38ba1b.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250329%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250329T135012Z&X-Amz-Expires=300&X-Amz-Signature=9665347ec9d112117db1ff128a29d88522f95ef95206e03a3ec09db2181f8333&X-Amz-SignedHeaders=host);
     --jet: hsl(0, 0%, 22%);
     --onyx: hsl(240, 1%, 17%);
     --eerie-black1: hsl(240, 2%, 13%);
@@ -133,7 +132,7 @@ body.light-mode {
     --text-gradient-yellow: linear-gradient(to right, #8EB486, #8EB486);
 
     --jet: #111;
-    --silder_img: url(nameplates/spirit_of_spring.png);
+    --silder_img: url(spirit_of_spring.png);
     --onyx: hsl(0, 0%, 95%);
     --eerie-black1: hsl(0, 0%, 98%);
     --eerie-black2: hsla(0,0%,99%,0.325);
@@ -178,7 +177,8 @@ input, textarea {
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--ff-poppins); }
+  font-family: var(--ff-poppins);
+  }
 
 body {
 background: var(--body_bg); 
@@ -325,16 +325,29 @@ article { display: none; }
 /*ASIDE - SIDEBAR*/
 
 .sidebar {
+    position: relative;
     margin-bottom: 15px;
     max-height: 112px;
     overflow: hidden;
     padding: 15px;
     transition: var(--transition2);
-    background-image: var(--silder_img);
     background-size: cover;
     background-position: right;
 }
 
+.sidebar::before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--silder_img);
+    background-size: 100% 100%; /* يجعل الصورة تمتد لكامل العنصر */
+    background-position: right;
+    filter: blur(2px);
+    z-index: -1;
+}
 .sidebar-info {
     position: relative;
     display: flex;
@@ -364,10 +377,14 @@ article { display: none; }
 }
 */
 .avatar-box {
-    background: var(--bg-gradient-onyx);
-    border-radius: 0px;
-    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 88%);
-    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 80%);
+    border-radius: 520px;
+    overflow: hidden;
+    padding: 2px;
+}
+.avatar-box img {
+    background: var(--text-gradient-yellow);
+    border-radius: 520px;
+    overflow: hidden;
 }
 .info-content .name {
     color: var(--white2);
@@ -541,3 +558,62 @@ svg {
   margin: 8px 4px 0;
   
 }
+/* inset tage */
+.code-box {
+        background-color: #111;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        cursor: grab;
+        user-select: none;
+        border-left: 4px solid #58a6ff;
+        padding: 12px;
+        margin: 1rem 0 0;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .update_header {
+        color: #f4a261;
+    }
+ .header {
+   direction: flex;
+   flex-direction: row;
+   direction: ltr;
+            background: #333;
+            padding: 8px;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+            font-size: 14px;
+            color: #ffbd2e;
+        }
+    .update-info {
+      direction: ltr;
+        font-size: 14px;
+        color: #c9d1d9;
+    }
+    .update_line{
+      gap: 4px;
+      display: flex;
+    }
+
+    /* تأثيرات Syntax Highlighting */
+    .keyword { color: #ff7b72; }  /* let, const, function */
+.string { color: #a5d6ff; }    .comment { color: #8b949e; }  /* // تعليقات */
+    .variable {
+      color: #d2a8ff; } /* اسم المتغير */
+    .bracket { color: #c9d1d9; }  /* {} و [] */
+    .update_margin1{
+      margin-left: 2.6rem;
+      
+    }
+    .update_margin2{
+      margin-left: 4.8rem;
+      
+    }
+    .update_margin3{
+      margin-left: 3rem;
+      
+    }
