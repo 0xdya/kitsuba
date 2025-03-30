@@ -363,10 +363,10 @@ a:hover.kitsuba_bug_hunter_tooltip::after {
   top: 200px;
 }
 .kitsuba_bug_hunter_badges_ar{
-  right: 110px
+  right: 130px
 }
 .kitsuba_bug_hunter_badges_en {
-  left: 134px
+  left: 150px
 }
 
 .kitsuba_bug_hunter_card,
@@ -657,12 +657,6 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
   .kitsuba_bug_hunter_badges {
     top: 108px;
     flex-direction: row-reverse
-  }
-  .kitsuba_bug_hunter_badges_en {
-    right: 0;
-  }
-  .kitsuba_bug_hunter_badges_ar {
-    left: 0;
   }
 
   .kitsuba_bug_hunter_avatar {
