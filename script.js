@@ -76,20 +76,44 @@ function timeSinceUpdate(lastUpdate) {
     let lastUpdateDate = new Date(lastUpdate);
     let now = new Date();
     let diffMs = now - lastUpdateDate;
-    let diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-    let diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-    let diffSeconds = Math.floor((diffMs % (1000 * 60)) / 1000);
-    
-    if (diffHours > 0) {
-        return `${diffHours} ساعة و ${diffMinutes} دقيقة`;
-    } else {
-        return `${diffMinutes} دقيقة و ${diffSeconds} ثانية`;
-    }
-}
 
-// تفعيل السحب على العنصر
-makeDraggable(document.getElementById("draggable-box"));
-    function fetchUpdateDetails() {
+    let diffSeconds = Math.floor(diffMs / 1000);
+    let diffMinutes = Math.floor(diffSeconds / 60);
+    let diffHours = Math.floor(diffMinutes / 60);
+    let diffDays = Math.floor(diffHours / 24);
+    let diffWeeks = Math.floor(diffDays / 7);
+    let diffMonths = Math.floor(diffDays / 30);
+
+    function getPluralForm(value, singular, dual, plural) {
+        if (value === 1) return singular;
+        if (value === 2) return dual;
+        return plural;
+    }
+
+    let parts = [];
+
+    if (diffMonths > 0) {
+        parts.push(`${diffMonths} ${getPluralForm(diffMonths, "شهر", "شهرين", "أشهر")}`);
+    }
+    if (diffWeeks > 0) {
+        parts.push(`${diffWeeks} ${getPluralForm(diffWeeks, "أسبوع", "أسبوعين", "أسابيع")}`);
+    }
+    if (diffDays > 0) {
+        parts.push(`${diffDays} ${getPluralForm(diffDays, "يوم", "يومين", "أيام")}`);
+    }
+    if (diffHours % 24 > 0) {
+        parts.push(`${diffHours % 24} ${getPluralForm(diffHours % 24, "ساعة", "ساعتين", "ساعات")}`);
+    }
+    if (diffMinutes % 60 > 0) {
+        parts.push(`${diffMinutes % 60} ${getPluralForm(diffMinutes % 60, "دقيقة", "دقيقتين", "دقائق")}`);
+    }
+    if (diffSeconds % 60 > 0 && parts.length === 0) { // إظهار الثواني فقط إذا لم يكن هناك أي وقت آخر
+        parts.push(`${diffSeconds % 60} ${getPluralForm(diffSeconds % 60, "ثانية", "ثانيتين", "ثوانٍ")}`);
+    }
+
+    return parts.join(" و ");
+}
+function fetchUpdateDetails() {
         fetch("update-log.json")
             .then(response => response.json())
             .then(data => {
@@ -120,8 +144,7 @@ makeDraggable(document.getElementById("draggable-box"));
             });
     }
     fetchUpdateDetails();
-    makeDraggable(document.getElementById("draggable-box"));
-    
+
 
 'use strict';
 
