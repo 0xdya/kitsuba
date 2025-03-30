@@ -601,7 +601,10 @@ svg {
 
     /* تأثيرات Syntax Highlighting */
     .keyword { color: #ff7b72; }  /* let, const, function */
-.string { color: #a5d6ff; }    .comment { color: #8b949e; }  /* // تعليقات */
+.string { 
+  direction: rtl;
+  color: #a5d6ff; } 
+  .comment { color: #8b949e; }  /* // تعليقات */
     .variable {
       color: #d2a8ff; } /* اسم المتغير */
     .bracket { color: #c9d1d9; }  /* {} و [] */
