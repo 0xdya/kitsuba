@@ -541,53 +541,10 @@ textarea.form-input {
     margin-bottom: 25px;
 }
 
-    textarea.form-input::-webkit-realizer { display: none; }
-
-.form-btn {
-    position: relative;
-    width: 100%;
-    background: var(--border-gradient-onyx);
-    color: var(--orange-yellow-crayola);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 20px;
-    border-radius: 14px;
-    font-size: var(--fs6);
-    text-transform: capitalize;
-    box-shadow: var(--shadow3);
-    z-index: 1;
-    transition: var(--transition1);
-}
-
-    .form-btn::before {
-        content: '';
-        position: absolute;
-        inset: 1px;
-        background: var(--bg-gradient-jet);
-        border-radius: inherit;
-        z-index: -1;
-        transition: var(--transition1);
-    }
-
-    .form-btn ion-icon { font-size: 16px; }
-    .form-btn:hover { background: var(--bg-gradient-yellow1); }
-        .form-btn::before { background: var(--bg-gradient-yellow2); }
-
-    .form-btn:disabled {
-        opacity: .7;
-        cursor: not-allowed;
-    }
-
-        .form-btn:disabled:hover { background: var(--border-gradient-onyx); }
-            .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
-
 
 /*MEDIA QUERIES*/
 
 @media (min-width: 450px) {
-    .clients-item { min-width: calc(33.33% - 10px); }
 
     .project-img, .blog-banner-box { height: auto; }
 }
@@ -695,58 +652,12 @@ textarea.form-input {
         border-radius: 28px;
     }
 
-        .testimonials-avatar-box img { width: 80px; }
-
-    .testimonials-item-title {
-        margin-bottom: 10px;
-        margin-left: 95px;
-    }
-
-    .testimonials-text {
-        line-clamp: 2;
-        -webkit-line-clamp: 2;
-    }
-
-    .modal-container {padding: 20px; }
-
-    .testimonials-modal {
-        display: flex;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 25px;
-        padding: 30px;
-        border-radius: 20px;
-    }
-
-    .modal-img-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .modal-avatar-box {
-        border-radius: 18px;
-        margin-bottom: 0;
-    }
-
-        .modal-avatar-box img { width: 65px; }
-
-    .modal-img-wrapper > img {
-        display: block;
-        position: relative;
-        /* flex-grow: 1; */
-        width: 35px;
-        top: 50px;
-    }
-
     .clients-list {
         gap: 25px;
         margin: 0 -30px;
         padding: 45px;
         scroll-padding-inline: 45px;
     }
-
-    .clients-item { min-width: calc(33..33% - 35px); }
 
     .timeline-list { margin-left: 65px; }
 
@@ -774,13 +685,6 @@ textarea.form-input {
     .form-input { padding: 15px 20px; }
 
     textarea.form-input { margin-bottom: 30px; }
-
-    .form-btn {
-        --fs-6: 16px;
-        padding: 16px 20px;
-    }
-
-        .form-btn ion-icon { font-size: 18px; }
 }
 
 @media (min-width: 768px) {
@@ -795,18 +699,8 @@ textarea.form-input {
     }
 
     .navbar-link { --fs8: 15px; }
-
-    .testimonials-modal {
-        gap: 35px;
-        max-width: 680px;
-    }
-
-    .modal-avatar-box img { width: 80px; }
-
     .article-title { padding-bottom: 20px; }
-
     .filter-select-box { display: none; }
-
     .filter-list {
         display: flex;
         justify-content: flex-start;
@@ -815,47 +709,36 @@ textarea.form-input {
         padding-left: 5px;
         margin-bottom: 30px;
     }
-
     .filter-item button {
         color: var(--light-gray);
         font-size: var(--fs5);
         transition: var(--transition1);
     }
-
         .filter-item button:hover { color: var(--light-gray70); }
         .filter-item button.active { color: var(--orange-yellow-crayola); }
 
     .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
 
     .input-wrapper { grid-template-columns: 1fr 1fr; }
-
-    .form-btn {
-        width: max-content;
-        margin-left: auto;
-    }
 }
-
 @media (min-width: 1024px) {
-
-    :root {
+      :root {
         --shadow1: -4px 8px 24px hsla(0, 0%, 0%, .125);
         --shadow2: 0px 16px 30px hsla(0, 0%, 0%, .125);
         --shadow3: 0px 16px 40px hsla(0, 0%, 0%, .125);
     }
-
-    .sidebar, article {
-        width: 950px;
-        box-shadow: var(--shadow5);
+    .project-list { grid-template-columns: repeat(3, 1fr); }
+    .blog-banner-box { height: 230px; }
+    body::-webkit-scrollbar { width: 20px; }
+    body::-webkit-scrollbar-track { background: var(--body_bg); }
+    body::-webkit-scrollbar-thumb {
+        border: 5px solid var(--body_bg);
+        background: hsla(0, 0%, 100%, .1);
+        border-radius: 20px;
+        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, .11), inset -1px -1px 0 hsla(0, 0%, 100%, .11);
     }
-
-    main { margin-bottom: 60px; }
-
-    .main-content {
-        position: relative;
-        width: max-content;
-        margin: auto;
-    }
-
+    body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, .15); }
+    body::-webkit-scrollbar-button { height: 60px; }
     .navbar {
         position: absolute;
         bottom: auto;
@@ -867,44 +750,15 @@ textarea.form-input {
         padding: 0 20px;
         box-shadow: none;
     }
-
     .navbar-list {
         gap: 30px;
         padding: 0 20px;
     }
-
     .navbar-link { font-weight: var(--fw500); }
-
-    .testimonials-item { min-width: calc(50% - 15px); }
-
-    .modal-img-wrapper > img { top: 20px; }
-
-    .clients-item { min-width: calc(25% - 15px); }
-
-    .project-list { grid-template-columns: repeat(3, 1fr); }
-
-    .blog-banner-box { height: 230px; }
-}
-
-@media (min-width: 1250px) {
-
-    body::-webkit-scrollbar { width: 20px; }
-    body::-webkit-scrollbar-track { background: var(--body_bg); }
-
-    body::-webkit-scrollbar-thumb {
-        border: 5px solid var(--body_bg);
-        background: hsla(0, 0%, 100%, .1);
-        border-radius: 20px;
-        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, .11), inset -1px -1px 0 hsla(0, 0%, 100%, .11);
+    .sidebar, article {
+        width: 800px;
+        box-shadow: var(--shadow5);
     }
-
-    body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, .15); }
-    body::-webkit-scrollbar-button { height: 60px; }
-
-    .sidebar, article { width: auto; }
-
-    article { min-height: 100%; }
-
     main {
         max-width: 1200px;
         margin-inline: auto;
@@ -913,13 +767,16 @@ textarea.form-input {
         align-items: stretch;
         gap: 25px;
     }
-
     .main-content {
         min-width: 75%;
         width: 75%;
         margin: 0;
     }
-
+    .content{
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
     .sidebar {
         position: sticky;
         top: 60px;
@@ -929,46 +786,47 @@ textarea.form-input {
         padding-top: 60px;
         z-index: 1;
     }
-
     .sidebar-info { flex-direction: column; }
-
     .avatar-box img { width: 150px; }
-
     .info-content .name {
         white-space: nowrap;
         text-align: center;
     }
-
     .info-content .title { margin: auto; }
-
     .info-more-btn { display: none; }
-
     .sidebar-info-more {
         opacity: 1;
         visibility: visible;
     }
-
-    .contacts-list { grid-template-columns: 1fr; }
-
+  .contacts-list { grid-template-columns: 1fr; }
     .contact-info :is(.contact-link) {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-
     .contact-info :is(.contact-link, time, address) {
         --fs7: 14px;
         font-weight: var(--fw300);
     }
-
     .separator:last-of-type {
         margin: 15px 0;
         opacity: 0;
     }
-
     .social-list { justify-content: center; }
-
     .timeline-text { max-width: 700px; }
+    .border{
+      width: 400px;
+    }
+    .content_flex2{
+      margin-top: 6rem;
+    }
+    .bmo{
+      left: -310px;
+    }
+    .check{
+  font-size: 26px;
+}
+
 }
 hr {
   border: none;
@@ -2221,6 +2079,13 @@ hr:before {
             text-align: right; /* المحافظة على اتجاه النص */
             direction: rtl; /* إجبار اتجاه النص */
         }
+      .chi3r_number {
+        color: #ededed;
+        font-size: 1.6rem;
+        position: absolute;
+        top: -5rem;
+        left: 1.6rem;
+        }
 
         .line p, .line{
             display: flex;
@@ -2319,8 +2184,8 @@ hr:before {
 .paper {
   background: var(--paper-color);
   margin: 0;
-  padding: calc(var(--top-space) - 0lh) 1rem 0 0;
-  font-size: 1.5rem;
+  padding: calc(var(--top-space) - 0.1lh) 1rem 0 0;
+  font-size: 1.2rem;
   text-indent: 18px;
   line-height: 1.6;
   color: var(--ink-color);
