@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comments</title>
+      <style>
+   @font-face {
+    font-family: "Liberty";
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/907368/liberty.otf");
+   }
+body.light-mode::before {
+  --size: 45px;
+  --line: color-mix(in lch, canvasText, transparent 85%);
+  content: '';
+  width: 100vw;
+  position: absolute;
+  background: linear-gradient(
+        90deg,
+        #55527C 1px,
+        transparent 1px var(--size)
+      )
+      50% 50% / var(--size) var(--size),
+    linear-gradient(#55527C 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  -webkit-mask: linear-gradient(-25deg, transparent 30%, red);
+          mask: linear-gradient(-25deg, transparent 30%, red);
+  top: 0;
+  transform-style: flat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+:root {
+    --artic_bg: #212121cf;
+    --artic_border: 1px solid #111;
+    --node_bg: rgb(30, 30, 30);
+    --node_link: #ffd700;
+        --artic_shadow: 4px 8px 24px rgba(0, 0, 0, 0.25);
+    --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+    --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+    --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
+    --bg-gradient-yellow2: linear-gradient(135deg, hsla(45, 100%, 71%, .251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+    --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+    --text-gradient-yellow: linear-gradient(to right, #58a6ff, rgba(167, 139, 250, 1));
+
+    --silder_img: url(img/banner.gif);
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+    --eerie-black1: hsl(240, 2%, 13%);
+    --eerie-black2: hsla(240,1.6%,12%,0.266);
+    --body_bg: hsl(0, 0%, 7%);
+    --white1: hsl(0, 0%, 100%);
+    --white2: hsl(0, 0%, 98%);
+    --orange-yellow-crayola: hsl(45, 100%, 72%);
+    --vegas-gold: hsl(45, 54%, 58%);
+    --light-gray: hsl(0, 0%, 84%);
+    --light-gray70: hsla(0, 0%, 84%, .7);
+    --bittersweet-shimmer: hsl(0, 43%, 51%);
+    --perper: rgba(167, 139, 250, 1);
+    --blue_ball: #1d4ed8;
+
+    --ff-poppins: 'Noto Kufi Arabic', sans-serif;
+
+    --fs1: 24px;
+    --fs2: 18px;
+    --fs3: 17px;
+    --fs4: 16px;
+    --fs5: 15px;
+    --fs6: 16px;
+    --fs7: 13px;
+    --fs8: 12px;
+
+    --fw300: 300;
+    --fw400: 400;
+    --fw500: 500;
+    --fw600: 600;
+
+    --shadow1: -4px 8px 24px hsla(0, 0%, 0%, .25);
+    --shadow2: 0px 16px 30px hsla(0, 0%, 0%, .25);
+    --shadow3: 0px 16px 40px hsla(0, 0%, 0%, .25);
+    --shadow4: 0px 25px 50px hsla(0, 0%, 0%, .15);
+    --shadow5: 0px 24px 80px hsla(0, 0%, 0%, .25);
+
+    --transition1: .25s ease;
+    --transition2: .5s ease-in-out;
+}
+body.light-mode {
+  --node_bg: #ffd7aa;
+  --node_link: #000;
+  --light-gray: #333;
+  --light-gray70: #777;
+  --shadow1: 0px 24px 80px #8EB486;
+  --shadow2: transparent;
+  --shadow3: transparent;
+    --orange-yellow-crayola: #997C70;
+    --vegas-gold: #997C70;
+    --artic_bg: #F8E9DA;
+    --artic_border: 1px solid #555;
+    --artic_shadow: transparent;
+    --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 90%) 3%, hsl(0, 0%, 100%) 97%);
+    --bg-gradient-jet: linear-gradient(to bottom right, hsla(0, 0%, 80%, .251) 3%, hsla(0, 0%, 100%, 0) 100%), hsl(0, 0%, 95%);
+    --text-gradient-yellow: linear-gradient(to right, #8EB486, #8EB486);
+
+    --jet: #111;
+    --silder_img: url(spirit_of_spring.png);
+    --onyx: hsl(0, 0%, 95%);
+    --eerie-black1: hsl(0, 0%, 98%);
+    --eerie-black2: hsla(0,0%,99%,0.325);
+    --body_bg: #f4dec7;
+    --white1: hsl(0, 0%, 10%);
+    --white2: hsl(0, 0%, 20%);
+    --blue_ball: transparent;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+   body {
+    background: var(--body_bg); 
+    color: var(--white2);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+   }
+
+   #contactForm {
+    background: var(--artic_bg);
+    border: var(--artic_border);
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+   }
+
+   #contactForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--white2);
+   }
+
+   #contactForm textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: #3333330f;
+    color: var(--white2);
+    border: 1px solid #ffffff5d;
+    border-radius: 10px;
+    font-size: 1rem;
+    resize: none;
+    min-height: 120px;
+    direction: rtl;
+    margin-bottom: 0.5rem;
+   }
+  #username {
+    width: 50%;
+    padding: 0.8rem;
+    background: #3333330f;
+    color: var(--white2);
+    border: 1px solid #ffffff5d;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    direction: rtl;
+   }
+
+   #contactForm textarea:focus, #username:focus{
+    outline: none;
+    border-color: #0070f3;
+   }
+
+   #contactForm button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #3333330f;
+    color: var(--white2);
+    border: 1px solid #ffffff5d;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0px 48px 35px -28px #e8e8e8;
+   }
+
+   #contactForm button:hover {
+    background: #ffffff07;
+   }
+
+   /* تصميم التنبيهات العصري */
+   .alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    background: var(--aric_bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white2);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+   }
+
+   .alert.show {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 999;
+   }
+
+   .alert.success {
+    background: rgba(76, 175, 80, 0.2);
+    border-color: rgba(76, 175, 80, 0.3);
+   }
+
+   .alert.error {
+    background: rgba(244, 67, 54, 0.2);
+    border-color: rgba(244, 67, 54, 0.3);
+   }
+
+   .alert-icon {
+    font-size: 1.2rem;
+   }
+
+   @media (max-width: 600px) {
+    #contactForm {
+     padding: 1.5rem;
+    }
+
+    .alert {
+     top: 10px;
+     right: 10px;
+     left: 10px;
+     text-align: center;
+    }
+   }
+
+   .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+   }
+   .flex_center{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+   }
+
+   /* From Uiverse.io by csemszepp */
+   .custum-file-upload {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    border: 1.8px dashed #e8e8e83d;
+    background-color: #21212100;
+    padding: 8px 1rem;
+    border-radius: 10px;
+    text-align: center;
+   }
+
+   .custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .custum-file-upload .icon svg {
+    height: 80px;
+    fill: #e8e8e8;
+   }
+
+   .text2 {
+    display: inline-block;
+   }
+
+   .custum-file-upload .text span {
+    font-weight: 400;
+    color: #e8e8e8;
+   }
+
+   .custum-file-upload input {
+    display: none;
+   }
+img{
+  width: 40px;
+}
+.hidden{
+  display: none;
+  opacity: 0;
+}
+.star-rating{
+  font-size: 2rem;
+  width: 100%;
+  padding: 0 0.8rem 0.1rem;
+  display: flex;
+  color: grey;
+  justify-content: center;
+  align-items: center;
+    margin-bottom: 0.5rem;
+   background: #3333330f;
+    color: var(--white2);
+    border: 1px solid #ffffff5d;
+    border-radius: 10px;
+}
+.star{
+  color: grey;
+}
+p{
+  margin: 0 auto;
+  font-size: 1rem;
+  color: white;
+}
+.note{
+  background: var(--artic_bg);
+    border: var(--artic_border);
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    width: 90%;
+    max-width: 310px;
+    position: fixed;
+    top: 0;
+    text-align: center;
+}
+  </style>
+
+</head>
+<body>
+  
+<form id="contactForm">
+  <div class="flex_center">
+   <label for="image" class="custum-file-upload">
+            <div class="text2">
+                <span id="image-name">تحميل صورة</span>
+            </div>
+            <input type="file" id="image" name="image" accept="image/*" onchange="handleFileSelect('image')">
+        </label>
+    <input type="text" id="username" name="username" placeholder="اسم المستخدم" required>
+    </div>
+    <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+      <div class="star-rating">
+    <span class="star" data-value="1">★</span>
+    <span class="star" data-value="2">★</span>
+    <span class="star" data-value="3">★</span>
+    <span class="star" data-value="4">★</span>
+    <span class="star" data-value="5">★</span>
+<input type="hidden" id="rating" name="rating">
+</div>
+    <div id="sending-message" style="display: none; color: red; font-weight: bold; margin-top: 10px;" dir="rtl">
+    جاري المعالجة ...
+</div>
+    <button type="submit">إرسال</button>
+</form>   
+    <div id="alert" class="alert">
+        <span class="alert-icon">✅</span>
+        <span id="alert-message"></span>
+    </div>
+<label for="file" class="hidden">
+            <div class="icon">
+<svg fill="#000000" height="2rem" width="2rem" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 490.955 490.955" xml:space="preserve">
+<path id="XMLID_448_" d="M445.767,308.42l-53.374-76.49v-20.656v-11.366V97.241c0-6.669-2.604-12.94-7.318-17.645L312.787,7.301
+	C308.073,2.588,301.796,0,295.149,0H77.597C54.161,0,35.103,19.066,35.103,42.494V425.68c0,23.427,19.059,42.494,42.494,42.494
+	h159.307h39.714c1.902,2.54,3.915,5,6.232,7.205c10.033,9.593,23.547,15.576,38.501,15.576c26.935,0-1.247,0,34.363,0
+	c14.936,0,28.483-5.982,38.517-15.576c11.693-11.159,17.348-25.825,17.348-40.29v-40.06c16.216-3.418,30.114-13.866,37.91-28.811
+	C459.151,347.704,457.731,325.554,445.767,308.42z M170.095,414.872H87.422V53.302h175.681v46.752
+	c0,16.655,13.547,30.209,30.209,30.209h46.76v66.377h-0.255v0.039c-17.685-0.415-35.529,7.285-46.934,23.46l-61.586,88.28
+	c-11.965,17.134-13.387,39.284-3.722,57.799c7.795,14.945,21.692,25.393,37.91,28.811v19.842h-10.29H170.095z M410.316,345.771
+	c-2.03,3.866-5.99,6.271-10.337,6.271h-0.016h-32.575v83.048c0,6.437-5.239,11.662-11.659,11.662h-0.017H321.35h-0.017
+	c-6.423,0-11.662-5.225-11.662-11.662v-83.048h-32.574h-0.016c-4.346,0-8.308-2.405-10.336-6.271
+	c-2.012-3.866-1.725-8.49,0.783-12.07l61.424-88.064c2.189-3.123,5.769-4.984,9.57-4.984h0.017c3.802,0,7.38,1.861,9.568,4.984
+	l61.427,88.064C412.04,337.28,412.328,341.905,410.316,345.771z"/>
+</svg>
+            </div>
+            <div class="text2">
+                <span id="file-name">تحميل ملف</span>
+            </div>
+            <input type="file" id="file" name="file" onchange="handleFileSelect('file')">
+        </label>
+        <div class="note">
+           <p>يجب ملء كل الحقول لإرسال التعليق  ⚠︎</p>
+           <p>سوف يتم وضع تعليقك بعد المراجعة ⚠︎</p>
+        </div>
+<script>
+// دالة للتحكم في اختيار الملفات
+function handleFileSelect(inputId) {
+    const fileInput = document.getElementById('file');
+    const imageInput = document.getElementById('image');
+
+    if (inputId === 'file' && fileInput.files.length > 0) {
+        imageInput.value = '';
+        document.getElementById('image-name').textContent = 'تحميل صورة';
+        selectedImageId = null;
+    } else if (inputId === 'image' && imageInput.files.length > 0) {
+        fileInput.value = '';
+        document.getElementById('file-name').textContent = 'تحميل ملف';
+        selectedImageId = null;
+    }
+}
+
+// دالة لعرض التنبيهات
+function showAlert(message, type) {
+    const alertDiv = document.getElementById('alert');
+    const alertMessage = document.getElementById('alert-message');
+    alertMessage.textContent = message;
+    alertDiv.className = `alert ${type}`;
+    alertDiv.classList.add('show');
+    setTimeout(() => {
+        alertDiv.classList.remove('show');
+    }, 3000);
+}
+
+// دالة لحذف محتوى الحقول
+function clearForm() {
+    document.getElementById('username').value = ''; 
+    document.getElementById('message').value = '';
+    document.getElementById('file').value = '';
+    document.getElementById('image').value = '';
+    document.getElementById('file-name').textContent = 'تحميل ملف';
+    document.getElementById('image-name').textContent = 'تحميل صورة';
+    document.getElementById('selected-image-name').textContent = '';
+    document.getElementById('rating').value = "";
+    document.querySelectorAll('.star').forEach(star => {
+    star.style.color = 'gray';
+});
+    selectedImageId = null;
+}
+
+// تحديث اسم الملف المختار
+document.getElementById('file').addEventListener('change', function(event) {
+    document.getElementById('file-name').textContent = event.target.files[0] ? event.target.files[0].name : 'تحميل ملف';
+});
+
+document.getElementById('image').addEventListener('change', function(event) {
+    document.getElementById('image-name').textContent = event.target.files[0] ? event.target.files[0].name : 'تحميل صورة';
+});
+
+document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', function () {
+        let rating = this.getAttribute('data-value');
+        document.getElementById('rating').value = rating;
+
+        // تلوين النجوم المختارة
+        document.querySelectorAll('.star').forEach(s => {
+            s.style.color = (s.getAttribute('data-value') <= rating) ? 'gold' : 'gray';
+        });
+    });
+});
+// دالة لجمع عنوان IP
+async function getIPAddress() {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip;
+    } catch (error) {
+        console.error('Error fetching IP address:', error);
+        return null;
+    }
+}
+
+// دالة لإرسال النموذج
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const sendingMessage = document.getElementById('sending-message');
+    sendingMessage.style.display = 'block';
+
+    const username = document.getElementById('username').value;
+    const message = document.getElementById('message').value;
+    const fileInput = document.getElementById('file');
+    const rating = document.getElementById('rating').value;
+    const imageInput = document.getElementById('image');
+    const file = fileInput.files[0];
+    const image = imageInput.files[0];
+    const ipAddress = await getIPAddress();
+
+let caption = `usr: ${username}\nmsg: ${message}\nRating: ${rating} stars\nIP Address: ${ipAddress}`;
+    let endpoint = 'sendMessage';
+    let payload = {
+        chat_id: 5962064921,
+        text: caption
+    };
+    let headers = { 'Content-Type': 'application/json' };
+
+    if (file) {
+        const formData = new FormData();
+        formData.append('chat_id', 5962064921);
+        formData.append('document', file);
+        formData.append('caption', caption);
+        endpoint = 'sendDocument';
+        payload = formData;
+        headers = {};
+    } else if (image) {
+        const formData = new FormData();
+        formData.append('chat_id', 5962064921);
+        formData.append('photo', image);
+        formData.append('caption', caption);
+        endpoint = 'sendPhoto';
+        payload = formData;
+        headers = {};
+    } else if (selectedImageUrl) {
+        payload = JSON.stringify({
+            chat_id: 5962064921,
+            photo: selectedImageUrl,
+            caption: caption
+        });
+        endpoint = 'sendPhoto';
+        headers = { 'Content-Type': 'application/json' }; // تأكد من تحديد نوع المحتوى
+    }
+
+    const url = `https://api.telegram.org/bot7741815017:AAGTPiZID3RsHP-H9N67NVXKlrTygrMh-VY/${endpoint}`;
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: endpoint === 'sendMessage' ? JSON.stringify(payload) : payload,
+            headers: headers
+        });
+
+        const data = await response.json();
+        if (data.ok) {
+            showAlert('تم إرسال الرسالة بنجاح!', 'success');
+        } else {
+            console.error('Telegram API Error:', data);
+            showAlert('حدث خطأ أثناء الإرسال.', 'error');
+        }
+    } catch (error) {
+        console.error('Fetch Error:', error);
+        showAlert('حدث خطأ أثناء الإرسال.', 'error');
+    } finally {
+        sendingMessage.style.display = 'none';
+        clearForm();
+    }
+});
+
+</script>
+</body>
+</html>
