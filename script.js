@@ -78,9 +78,9 @@ function timeSinceUpdate(lastUpdate) {
     let diffMs = now - lastUpdateDate;
 
     let diffSeconds = Math.floor(diffMs / 1000);
-    let diffMinutes = Math.floor(diffSeconds / 60);
-    let diffHours = Math.floor(diffMinutes / 60);
-    let diffDays = Math.floor(diffHours / 24);
+    let diffMinutes = Math.floor(diffSeconds / 60) % 60;
+    let diffHours = Math.floor(diffSeconds / 3600) % 24;
+    let diffDays = Math.floor(diffSeconds / (3600 * 24));
     let diffWeeks = Math.floor(diffDays / 7);
     let diffMonths = Math.floor(diffDays / 30);
 
@@ -94,21 +94,21 @@ function timeSinceUpdate(lastUpdate) {
 
     if (diffMonths > 0) {
         parts.push(`${diffMonths} ${getPluralForm(diffMonths, "شهر", "شهرين", "أشهر")}`);
-    }
-    if (diffWeeks > 0) {
+    } else if (diffWeeks > 0) {
         parts.push(`${diffWeeks} ${getPluralForm(diffWeeks, "أسبوع", "أسبوعين", "أسابيع")}`);
-    }
-    if (diffDays > 0) {
+    } else if (diffDays > 0) {
         parts.push(`${diffDays} ${getPluralForm(diffDays, "يوم", "يومين", "أيام")}`);
+    } else {
+        if (diffHours > 0) {
+            parts.push(`${diffHours} ${getPluralForm(diffHours, "ساعة", "ساعتين", "ساعات")}`);
+        }
+        if (diffMinutes > 0) {
+            parts.push(`${diffMinutes} ${getPluralForm(diffMinutes, "دقيقة", "دقيقتين", "دقائق")}`);
+        }
     }
-    if (diffHours % 24 > 0) {
-        parts.push(`${diffHours % 24} ${getPluralForm(diffHours % 24, "ساعة", "ساعتين", "ساعات")}`);
-    }
-    if (diffMinutes % 60 > 0) {
-        parts.push(`${diffMinutes % 60} ${getPluralForm(diffMinutes % 60, "دقيقة", "دقيقتين", "دقائق")}`);
-    }
-    if (diffSeconds % 60 > 0 && parts.length === 0) { // إظهار الثواني فقط إذا لم يكن هناك أي وقت آخر
-        parts.push(`${diffSeconds % 60} ${getPluralForm(diffSeconds % 60, "ثانية", "ثانيتين", "ثوانٍ")}`);
+
+    if (parts.length === 0) {
+        parts.push(`${diffSeconds} ${getPluralForm(diffSeconds, "ثانية", "ثانيتين", "ثوانٍ")}`);
     }
 
     return parts.join(" و ");

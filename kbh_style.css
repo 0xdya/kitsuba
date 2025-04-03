@@ -823,7 +823,7 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
     display: inline-block;
    }
 
-   .custum-file-upload .text span {
+   .custum-file-upload span {
     font-weight: 400;
     color: #e8e8e8;
    }

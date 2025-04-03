@@ -568,7 +568,7 @@
 								<div class="stars">★★★★★</div>
 							</div>
 						</li>
-											<button data-sound="chest2.mp3" class="golden-button active" data-nav-link>اكتب تعليق</button>
+											<a href="comment/" class="golden-button active">اكتب تعليق</a>
 					</ul>
 				</div>
 			</article>
@@ -1492,15 +1492,13 @@ Bookworm
 
             <label for="image1" class="custum-file-upload">
                 <span id="image-name1">تحميل صورة</span>
-                <input type="file" id="image1" name="image" accept="image/*">
+                <input type="file" id="image1" name="image" accept="me.webp">
             </label>
 </div>
             <button class="form-btn" type="submit">
                 <ion-icon name="paper-plane"></ion-icon> <span>إرسال</span>
             </button>
         </form>	
-        <!-- منطقة التنبيهات -->
-<div class="alerts_style"id="alerts-container"></div>
     </section>
 
 </article>
@@ -1519,6 +1517,8 @@ Bookworm
 						<button class="form-btn" type="submit" disabled data-form-btn>
 							<ion-icon name="paper-plane"></ion-icon> <span>إرسال</span> </button>
 					</form>
+					        <!-- منطقة التنبيهات -->
+<div class="alerts_style"id="alerts-container"></div>
 				</section>
 			</article>
 			<article class="setting " data-page="الإعدادات">
@@ -1551,12 +1551,12 @@ Bookworm
   <input id="sound-toggle" type="checkbox" />
   <span class="slider"></span>
   <img
-    class="off"
-    src="img/off.png"
-  />
-  <img
     class="on"
     src="img/on.png"
+  />
+  <img
+    class="off"
+    src="img/off.png"
   />
 </label>
           </div>
