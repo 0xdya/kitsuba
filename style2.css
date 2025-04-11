@@ -1508,11 +1508,6 @@ hr:before {
   font-size: 12px;
   margin: 0 0 2rem;
 }
-.back_to_map_button a{
-  position: absolute;
-  left: 10%;
-  z-index: 99999999;
-}
 #bg{
   top: 6rem;
   left: -1rem;
@@ -2127,7 +2122,7 @@ hr:before {
         .chi3r_1 {
             font-size: 18px;
             line-height: 1.8;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 

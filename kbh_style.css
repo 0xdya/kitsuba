@@ -838,3 +838,7 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
   width: 2px; !important
   height: 2px;
 }
+#back-to-home{
+  position: absolute;
+  left: 12px;
+}
