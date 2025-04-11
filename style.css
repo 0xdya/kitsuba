@@ -386,6 +386,7 @@ article { display: none; }
     background: var(--text-gradient-yellow);
     border-radius: 520px;
     overflow: hidden;
+    transform: scaleX(-1)
 }
 .info-content .name {
     color: var(--white2);
