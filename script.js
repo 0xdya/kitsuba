@@ -114,12 +114,12 @@ function timeSinceUpdate(lastUpdate) {
     return parts.join(" و ");
 }
 function fetchUpdateDetails() {
-        fetch("update-log.json")
+        fetch("../update_log.json")
             .then(response => response.json())
             .then(data => {
-                let updateHTML =`<div class="update_line">   <span class="variable update_margin1">updateDay</span>: <span class="string">"${data.datee}"</span>,<br></div>`;
+                let updateHTML =`<div class="update_line">   <span class="variable update_margin1">webStart</span>: <span class="string">"${data.datee}"</span>,<br></div>`;
 
-            updateHTML += ` <div class="update_line">  <span class="variable update_margin1">updateBefore</span>: <span class="string" dir="rtl">"${timeSinceUpdate(data.lastUpdate)}"</span>,<br></div>`;
+            updateHTML += ` <div class="update_line">  <span class="variable update_margin1">lastUpdate</span>: <span class="string" dir="rtl">"${timeSinceUpdate(data.lastUpdate)}"</span>,<br></div>`;
 
                 if (data.newFeatures.length > 0) {
                     updateHTML += ` <div class="update_line"> <span class="variable update_margin1">newFeatures</span>: <span class="bracket">[</span></div>`;
@@ -225,8 +225,8 @@ if (form && formBtn) {
     let secretClickCount = 0; // عداد نقرات الزر السري
 
     // إنشاء عناصر الصوت
-    const clickSound = new Audio('sound/throw.mp3'); // صوت لكل ضغطة
-    const successSound = new Audio('sound/complet.mp3'); // صوت عند الضغطة الأخيرة
+    const clickSound = new Audio('../sound/note.mp3'); // صوت لكل ضغطة
+    const successSound = new Audio('../sound/complet.mp3'); // صوت عند الضغطة الأخيرة
 
 navigationLinks.forEach(link => {
     link.addEventListener('click', function () {
@@ -345,7 +345,7 @@ function playSound(file) {
         });
     }
 
-    const audio = new Audio(`./sound/${file}`);
+    const audio = new Audio(`../sound/${file}`);
     audio.play().catch(error => console.error("خطأ في تشغيل الصوت:", error));
 }
 
@@ -634,7 +634,7 @@ document.getElementById("poetryAdviceForm").addEventListener("submit", function(
     let botToken = "7952561228:AAH5t_OgXBnyZ9Pi3zRXNPNuuGeLU4AtmjM"; // ضع توكن البوت الخاص بك هنا
             let chatId = "5962064921"; // ضع رقم معرفك في تيليجرام
 
-    let text = `📩 *رسالة جديدة حول قصائدك*\n\n👤 *المرسل:* ${name}\n📝 *الرسالة:* ${message}`;
+    let text = `📩 *رسالة جديدة حول قصائدي*\n\n👤 *المرسل:* ${name}\n📝 *الرسالة:* ${message}`;
     let url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=Markdown`;
 
     // عرض رسالة "جاري الإرسال..."

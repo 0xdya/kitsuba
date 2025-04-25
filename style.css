@@ -76,7 +76,7 @@ body.light-mode::before {
     --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
     --text-gradient-yellow: linear-gradient(to right, #58a6ff, rgba(167, 139, 250, 1));
 
-    --silder_img: url(img/banner.gif);
+    --silder_img: url(../img/banner.gif);
     --jet: hsl(0, 0%, 22%);
     --onyx: hsl(240, 1%, 17%);
     --eerie-black1: hsl(240, 2%, 13%);
@@ -135,7 +135,7 @@ body.light-mode {
     --text-gradient-yellow: linear-gradient(to right, #8EB486, #8EB486);
 
     --jet: #111;
-    --silder_img: url(spirit_of_spring.png);
+    --silder_img: url(../banner/spirit_of_spring.png);
     --onyx: hsl(0, 0%, 95%);
     --eerie-black1: hsl(0, 0%, 98%);
     --eerie-black2: hsla(0,0%,99%,0.325);
@@ -354,7 +354,7 @@ article { display: none; }
     position: relative;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
   
 }
@@ -381,13 +381,57 @@ article { display: none; }
 .avatar-box {
     border-radius: 520px;
     padding: 2px;
+    overflow: visible;
+    transform: scaleX(-1);
 }
-.avatar-box img {
-    background: var(--text-gradient-yellow);
+.home_bagdes {
+  font-size: .9em;
+}
+:hover.home_bagdes::after {
+  content: attr(aria-label);
+  width: max-content;
+  height: 1.6rem;
+  position: absolute;
+  bottom: 1rem;
+  background-color: beige;
+  color: #000;
+  padding: 4px 10px 6px;
+  border-radius: 5px;
+  z-index: 999;
+  font-size: .8em !important;
+  white-space: nowrap;
+  max-width: 150px
+}
+
+:hover.home_bagdes::before {
+  content: "";
+  position: absolute;
+  bottom: 1.6rem;
+  transform: translate(40%, 0%);
+  border: 8px solid transparent;
+  border-top-color: beige
+}
+
+a:hover.home_bagdes::after {
+  top: 1.2rem
+}
+
+
+.home_bagdes::before {
+  bottom: 22rem
+}
+
+.logo {
     border-radius: 520px;
-    overflow: hidden;
-    transform: scaleX(-1)
+    width:80px
 }
+.avatar-box-cover{
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width:96px
+}
+
 .info-content .name {
     color: var(--white2);
     font-size: var(--fs3);
@@ -398,14 +442,17 @@ article { display: none; }
     flex-direction: row;
 }
 
-.info-content .title {
+.home_bagdes_continer {
     color: var(--white1);
-    background: var(--onyx);
+    background: var(--artic_bg);
+    border: var(--artic_border);
     font-size: var(--fs8);
     font-weight: var(--fw300);
     width: max-content;
     padding: 3px 12px;
     border-radius: 8px;
+    display: flex;
+    gap: 4px;
 }
 
 .info-more-btn {
@@ -558,7 +605,6 @@ svg {
   color: #009EF7;
   padding: 0;
   margin: 6px 4px 0;
-  
 }
 /* inset tage */
 .code-box {

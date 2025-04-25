@@ -624,9 +624,25 @@ textarea.form-input {
     .sidebar-info { gap: 25px; }
 
     .avatar-box { border-radius: 30px; }
-        .avatar-box img { width: 120px; }
+    .logo {
+    border-radius: 520px;
+    width:80px
+}
+.avatar-box-cover{
+  position: absolute;
+  top: -6px;
+  left: 82px;
+  width:96px
+}
 
-    .info-content .name { margin-bottom: 15px; }
+    .info-content .name {
+      margin-right: -1rem;
+      margin-top: 38px; }
+      .home_bagdes_continer {
+        position: absolute;
+        right: -12px;
+        margin-top: 1rem;
+      }
     .info-content .title { padding: 5px 10px; }
 
     .info-more-btn {
@@ -747,6 +763,9 @@ textarea.form-input {
 
     .input-wrapper { grid-template-columns: 1fr 1fr; }
 }
+.sidebar_banner{
+  display: none;
+}
 @media (min-width: 1024px) {
       :root {
         --shadow1: -4px 8px 24px hsla(0, 0%, 0%, .125);
@@ -781,8 +800,8 @@ textarea.form-input {
         padding: 0 20px;
     }
     .navbar-link { font-weight: var(--fw500); }
-    .sidebar, article {
-        width: 800px;
+    .sidebar {
+        min-width: 300px;
         box-shadow: var(--shadow5);
     }
     main {
@@ -812,11 +831,35 @@ textarea.form-input {
         padding-top: 60px;
         z-index: 1;
     }
-    .sidebar-info { flex-direction: column; }
-    .avatar-box img { width: 150px; }
+    .sidebar_banner{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100px;
+      width: 100% ;
+    }
+    
+    .sidebar::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--rr);
+    background-size: 100% 40px; 
+    background-position: right;
+    background-repeat: no-repeat;
+    filter: blur(0);
+    z-index: -1;
+}
+
+    .sidebar-info { flex-direction: row; }
+
     .info-content .name {
         white-space: nowrap;
         text-align: center;
+        font-size: 17px;
     }
     .info-content .title { margin: auto; }
     .info-more-btn { display: none; }
@@ -824,6 +867,10 @@ textarea.form-input {
         opacity: 1;
         visibility: visible;
     }
+          .sidebar-info-more_hr_pc{
+        margin-top: 2rem;
+      }
+
   .contacts-list { grid-template-columns: 1fr; }
     .contact-info :is(.contact-link) {
         white-space: nowrap;
@@ -850,7 +897,10 @@ textarea.form-input {
       left: -310px;
     }
     .check{
-  font-size: 26px;
+  font-size: 16px;
+  color: #009EF7;
+  padding: 0;
+  margin: 6px 4px 0;
 }
 
 }
@@ -2007,7 +2057,7 @@ hr:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("./img/chi3r2.jpg");
+  background-image: url("../img/chi3r2.jpg");
   background-repeat: no-repeat;
   z-index: -1;
   filter: blur(5px);
@@ -2019,11 +2069,11 @@ hr:before {
 
    @font-face {
     font-family: dyaa;
-    src: url(اليد.otf);
+    src: url(../font/اليد.otf);
 }
    @font-face {
     font-family: المصمك;
-    src: url(المصمك.otf);
+    src: url(../font/المصمك.otf);
 }
 
         .chi3r_section {
