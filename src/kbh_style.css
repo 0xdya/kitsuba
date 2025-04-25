@@ -1,0 +1,844 @@
+.kbh_title {
+    position: relative;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+}
+.kbh_title span{
+  color: #fc2;
+  margin-left: 12px;
+  font-size: 32px;
+  margin-top: -9px;
+}
+.kbh {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-family: "Playpen Sans", cursive
+}
+.kitsuba_bug_hunter_avatar,
+.kitsuba_bug_hunter_badges,
+.kitsuba_bug_hunter_badges .kitsuba_bug_hunter_badges-right,
+.kitsuba_bug_hunter_container,
+.kitsuba_bug_hunter_custom-status,
+.kitsuba_bug_hunter_id,
+.kitsuba_bug_hunter_name-box {
+  display: flex
+}
+
+.kitsuba_bug_hunter_profile .kitsuba_bug_hunter_banner,
+.kitsuba_bug_hunter_profile .kitsuba_bug_hunter_banner img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%
+}
+
+
+.kitsuba_bug_hunter_id {
+  font-family: "Playpen Sans", cursive
+}
+
+.kitsuba_bug_hunter_display-name,
+.kitsuba_bug_hunter_username {
+  color: var(--text-color)
+}
+
+
+:root {
+    --text-color: black;
+  --primary-h-top: 206deg;
+  --primary-s-top: 41%;
+  --primary-l-top: 88%;
+  --primary-h-bottom: 212deg;
+  --primary-s-bottom: 58%;
+  --primary-l-bottom: 44%;
+  --box-shadow-color: rgba(0, 0, 0, 0.1)
+}
+
+.kitsuba_bug_hunter_badges,
+.kitsuba_bug_hunter_card,
+.kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol,
+.kitsuba_bug_hunter_status {
+  --primary-h-bottom: var(--primary-h-top)
+}
+
+::-webkit-scrollbar {
+  width: .3rem;
+  height: auto;
+  scrollbar-width: thin;
+  border-radius: 50%
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--primary-h-top), 45%, 50%, .1);
+  border-radius: 10px
+}
+
+.kitsuba_bug_hunter_profile,
+.kitsuba_bug_hunter_profile-border {
+  position: relative;
+  border-radius: 8px;
+  margin: 0 auto;
+  display: flex
+}
+
+
+
+
+
+
+.kitsuba_bug_hunter_box-color {
+  background: linear-gradient(to bottom, hsl(var(--primary-h-top), var(--primary-s-top), var(--primary-l-top)), hsl(var(--primary-h-bottom), var(--primary-s-bottom), var(--primary-l-bottom)))
+}
+
+.kitsuba_bug_hunter_container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Playpen Sans", cursive
+}
+
+.kitsuba_bug_hunter_container::before {
+  content: "";
+  position: fixed;
+  margin: -15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./kbh/bg.webp");
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: blur(5px);
+  background-color: rgba(0, 0, 0, .5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center
+}
+
+.kitsuba_bug_hunter_profile-border {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .1);
+  padding: 5px;
+  flex-direction: column;
+  max-height: calc(100% - 100px)
+}
+
+.kitsuba_bug_hunter_chat-container,
+.kitsuba_bug_hunter_platform,
+.kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol {
+  box-shadow: 0 0 0 1px var(--box-shadow-color)
+}
+
+.kitsuba_bug_hunter_profile {
+  z-index: 1;
+  flex-direction: column;
+  --primary-s-top: 43%;
+  --primary-l-top: 99%;
+  --primary-s-bottom: 47%;
+  --primary-l-bottom: 78%;
+  width: 600px;
+  max-height: calc(100vh - 100px)
+}
+
+.kitsuba_bug_hunter_avatar,
+.kitsuba_bug_hunter_status {
+  position: absolute;
+  border-radius: 50%
+}
+
+.kitsuba_bug_hunter_avatar,
+.kitsuba_bug_hunter_avatar #avatar-image {
+  --primary-s-top: 42%;
+  --primary-l-top: 95%;
+  --primary-s-bottom: 44%;
+  --primary-l-bottom: 94%
+}
+
+.kitsuba_bug_hunter_profile .kitsuba_bug_hunter_banner {
+  height: 190px
+}
+
+.kitsuba_bug_hunter_badges .kitsuba_bug_hunter_badges-left,
+.kitsuba_bug_hunter_badges img {
+  height: 26px
+}
+
+.kitsuba_bug_hunter_profile .kitsuba_bug_hunter_banner img {
+  height: 100%;
+  object-fit: cover
+}
+
+.kitsuba_bug_hunter_avatar_ar {
+  align-items: center;
+  justify-content: center;
+  top: 120px;
+  right: 1rem !important
+}
+.kitsuba_bug_hunter_avatar_en {
+  align-items: center;
+  justify-content: center;
+  top: 120px;
+  left: 1.2rem !important
+}
+
+.kitsuba_bug_hunter_badges,
+.kitsuba_bug_hunter_status {
+  --primary-s-top: 41%;
+  --primary-l-top: 97%;
+  --primary-s-bottom: 41%;
+  --primary-l-bottom: 97%
+}
+
+.kitsuba_bug_hunter_avatar #avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 8px;
+  background-color: #e8eff6;
+}
+
+.kitsuba_bug_hunter_avatar-decoration {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.kitsuba_bug_hunter_status {
+  max-width: 34px;
+  max-height: 44px;
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+  bottom: 14.64%;
+  right: 14.64%
+}
+
+.kitsuba_bug_hunter_body,
+.kitsuba_bug_hunter_content {
+  max-height: calc(100vh - 530px)
+}
+
+.kitsuba_bug_hunter_id::after,
+.kitsuba_bug_hunter_id::before {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden
+}
+
+#status-image,
+.kitsuba_bug_hunter_badges-left>a,
+.kitsuba_bug_hunter_badges-right>a,
+.kitsuba_bug_hunter_card,
+.kitsuba_bug_hunter_content,
+.kitsuba_bug_hunter_id,
+.kitsuba_bug_hunter_name-box {
+  position: relative
+}
+
+.kitsuba_bug_hunter_badges,
+.kitsuba_bug_hunter_id::after,
+.kitsuba_bug_hunter_id::before {
+  position: absolute
+}
+
+.kitsuba_bug_hunter_tooltip {
+  font-size: .9em;
+}
+.kitsuba_bug_hunter_id,
+.kitsuba_bug_hunter_id::after {
+  font-size: .8em
+}
+
+:hover.kitsuba_bug_hunter_tooltip::after {
+  content: attr(aria-label);
+  width: max-content;
+  position: absolute;
+  top: unset;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #111214;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 2;
+  font-size: .8em !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px
+}
+
+:hover.kitsuba_bug_hunter_tooltip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  border: 5px solid transparent;
+  border-top-color: #111214
+}
+
+a:hover.kitsuba_bug_hunter_tooltip::after {
+  top: -23px
+}
+
+.kitsuba_bug_hunter_status:hover.kitsuba_bug_hunter_tooltip::after {
+  bottom: 24px
+}
+
+.kitsuba_bug_hunter_status:hover.kitsuba_bug_hunter_tooltip::before {
+  bottom: 15px
+}
+
+.kitsuba_bug_hunter_id {
+  border: none;
+  background: 0 0;
+  text-align: start;
+  padding: 0;
+  cursor: pointer
+}
+
+#message-input,
+.kitsuba_bug_hunter_divider {
+  background-color: transparent
+}
+
+.kitsuba_bug_hunter_id::after {
+  content: attr(aria-label);
+  width: max-content;
+  bottom: 8px;
+  background-color: #111214;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px
+}
+
+.kitsuba_bug_hunter_badges,
+.kitsuba_bug_hunter_badges .kitsuba_bug_hunter_badges-left,
+.kitsuba_bug_hunter_name-box,
+.kitsuba_bug_hunter_name-box {
+  width: fit-content
+}
+
+.kitsuba_bug_hunter_id:hover::after,
+.kitsuba_bug_hunter_id:hover::before {
+  visibility: visible
+}
+
+.kitsuba_bug_hunter_id::before {
+  content: "";
+  top: 0;
+  border: 5px solid transparent;
+  border-top-color: #111214
+}
+
+.kitsuba_bug_hunter_id.kitsuba_bug_hunter_clicked::after {
+  background-color: #23a559
+}
+
+.kitsuba_bug_hunter_id.kitsuba_bug_hunter_clicked::before {
+  border-top-color: #23a559
+}
+
+#status-image {
+  width: 25px;
+  height: 25px;
+  padding: 7px;
+  border-radius: 50%
+}
+
+.kitsuba_bug_hunter_badges {
+  flex-direction: row-reverse;
+  padding: 2px;
+  border-radius: 10px;
+  top: 200px;
+}
+.kitsuba_bug_hunter_badges_ar{
+  right: 130px
+}
+.kitsuba_bug_hunter_badges_en {
+  left: 150px
+}
+
+.kitsuba_bug_hunter_card,
+.kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol {
+  --primary-s-top: 45%;
+  --primary-s-bottom: 45%
+}
+
+.kitsuba_bug_hunter_badges img {
+  width: 26px
+}
+
+.kitsuba_bug_hunter_badges .kitsuba_bug_hunter_badges-left img {
+  opacity: 100%;
+  animation: none
+}
+
+.kitsuba_bug_hunter_badges .kitsuba_bug_hunter_badges-right {
+  flex-direction: row;
+  width: fit-content;
+  height: 26px
+}
+
+.kitsuba_bug_hunter_card {
+  margin: 80px 16px 16px;
+  --primary-l-top: 94%;
+  --primary-l-bottom: 94%;
+  border-radius: 5px
+}
+
+.kitsuba_bug_hunter_name-box {
+  flex-direction: column;
+  margin: 20px 20px 0;
+  padding-right: 5px;
+}
+
+.kitsuba_bug_hunter_display-name {
+  font-size: 20px;
+  font-weight: bolder
+
+  
+}
+
+.kitsuba_bug_hunter_username {
+  font-weight: 600;
+  border-radius: 50%;
+  font-size: .9em
+}
+
+.kitsuba_bug_hunter_platform,
+.kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol {
+  border-radius: 4px
+}
+
+.kitsuba_bug_hunter_body .title-body,
+.kitsuba_bug_hunter_pronouns {
+  font-size: 12px;
+  color: var(--text-color)
+}
+
+.kitsuba_bug_hunter_pronouns {
+  font-weight: 400;
+  margin: 3px 0 0
+}
+
+
+
+
+
+.kitsuba_bug_hunter_divider {
+  height: 0;
+  margin-top: 5px;
+  margin-bottom: 0
+}
+
+.kitsuba_bug_hunter_body {
+  padding: 0 20px 16px
+}
+
+.kitsuba_bug_hunter_body .title-body {
+  font-weight: 700;
+  line-height: 16px;
+  margin-bottom: 8px
+}
+
+.kitsuba_bug_hunter_body .kitsuba_bug_hunter_roles-body {
+  margin-bottom: 10px
+}
+
+.kitsuba_bug_hunter_content {
+  border-top: 1px solid var(--box-shadow-color);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 5px
+}
+
+
+.kitsuba_bug_hunter_roles-body {
+  -ms-flex-wrap: wrap;
+  margin: 1px;
+  flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+.kitsuba_bug_hunter_platform,
+.kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol,
+.kitsuba_bug_hunter_socials {
+  display: -webkit-box;
+  display: -ms-flexbox
+}
+
+.kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol {
+  background: linear-gradient(to bottom, hsl(var(--primary-h-top), var(--primary-s-top), var(--primary-l-top)), hsl(var(--primary-h-bottom), var(--primary-s-bottom), var(--primary-l-bottom)));
+  --primary-l-top: 96%;
+  --primary-l-bottom: 96%;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 4px 4px 0;
+  padding: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 500
+}
+
+.kitsuba_bug_hunter_roles-body .kitsuba_bug_hunter_rol span {
+  color: var(--text-color);
+  margin-left: 4px;
+  margin-right: 4px
+}
+
+.kitsuba_bug_hunter_social-divider {
+  margin-bottom: 0
+}
+
+.kitsuba_bug_hunter_socials {
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.kitsuba_bug_hunter_platform {
+  width: 225px;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 12px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none
+}
+
+.kitsuba_bug_hunter_platform-username {
+  color: var(--text-color);
+  font-size: .9em;
+  font-weight: 600;
+  margin-right: 10px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1
+}
+
+.kitsuba_bug_hunter_platform::hover {
+  text-decoration: none
+}
+
+.kitsuba_bug_hunter_platform-icon {
+  width: 24px;
+  height: 24px
+}
+
+.kitsuba_bug_hunter_connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  -webkit-filter: invert(86%) sepia(5%) saturate(136%) hue-rotate(177deg) brightness(70%) contrast(70%);
+  filter: invert(86%) sepia(5%) saturate(136%) hue-rotate(177deg) brightness(70%) contrast(70%)
+}
+
+.kitsuba_bug_hunter_connect:hover {
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(0%) contrast(0%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(0%) contrast(0%)
+}
+
+.kitsuba_bug_hunter_softpink {
+  color: #f8bbd0
+}
+
+.kitsuba_bug_hunter_rosepink {
+  color: #ecdcd4
+}
+
+.kitsuba_bug_hunter_green {
+  color: #1ed760;
+}
+
+.firebrick_red {
+  color: #b22222;
+}
+
+.deep_sky_blue {
+  color: #00bfff;
+}
+
+.golden_sun {
+  color: #ffd700;
+}
+
+.midnight_purple {
+  color: #4b0082;
+}
+
+.neon_pink {
+  color: #ff1493;
+}
+
+.coral_orange {
+  color: #ff7f50;
+}
+
+.forest_green {
+  color: #228b22;
+}
+
+.royal_blue {
+  color: #4169e1;
+}
+
+.charcoal_gray {
+  color: #36454f;
+}
+
+.kitsuba_bug_hunter_blue {
+  color: #00aff4
+}
+
+.kitsuba_bug_hunter_chat-container {
+  width: 494px;
+  max-width: 514px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: none !important
+}
+
+#message-input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 500
+}
+
+@media (width <=640px) {
+  .kitsuba_bug_hunter_container::before {
+background-image: url("./kbh/bg7.jpg");    margin: -2px;
+    filter: blur(8px);
+    background-blend-mode: darken
+  background-color: #1a1a2e;
+  transition: background-color 5s ease;
+  z-index: -1;
+}
+
+/* عند تغيير الخلفية عبر JavaScript أو CSS، سيتم الانتقال بسلاسة */
+
+  .kitsuba_bug_hunter_profile {
+    width: 300px
+  }
+
+  .kitsuba_bug_hunter_profile .kitsuba_bug_hunter_banner {
+    height: 100px
+  }
+
+  .kitsuba_bug_hunter_badges {
+    top: 108px;
+    flex-direction: row-reverse
+  }
+
+  .kitsuba_bug_hunter_avatar {
+    top: 55px
+  }
+
+  .kitsuba_bug_hunter_avatar #avatar-image {
+    width: 86px;
+    height: 86px
+  }
+
+  .kitsuba_bug_hunter_avatar-decoration {
+    width: 130px;
+    height: 130px
+  }
+
+  .kitsuba_bug_hunter_name-box {
+    width: 236px;
+    margin: 16px 16px 10px
+  }
+
+  .kitsuba_bug_hunter_body {
+    padding: 0 16px 16px
+  }
+
+  .kitsuba_bug_hunter_card {
+    margin: 70px 16px 16px
+  }
+
+  .kitsuba_bug_hunter_socials {
+    display: block
+  }
+
+  .kitsuba_bug_hunter_platform {
+    width: 196px
+  }
+
+  .kitsuba_bug_hunter_chat-container {
+    width: 200px
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+
+
+/* contact */
+
+   #contactForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+   }
+
+   /* تصميم التنبيهات العصري */
+  
+/* صندوق التنبيهات العام */
+.alerts_style {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 9999;
+}
+
+/* تصميم كل تنبيه */
+.alert {
+    padding: 15px 24px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ألوان التنبيهات حسب النوع */
+   .alert.success {
+    background: rgba(76, 175, 80, 0.2);
+    border-color: rgba(76, 175, 80, 0.3);
+   }
+
+   .alert.error {
+    background: rgba(244, 67, 54, 0.2);
+    border-color: rgba(244, 67, 54, 0.3);
+   }
+.alert.warning { background: #FF9800; } /* برتقالي */
+.alert.info { background: #2196F3; }    /* أزرق */
+
+/* زر إغلاق التنبيه */
+.alert .close-btn {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+   @media (max-width: 600px) {
+    #contactForm {
+     padding: 1.5rem;
+    }
+
+    .alert {
+      width: 300px;
+     top: 30px;
+     right: 10px;
+     left: 10px;
+     text-align: center;
+    }
+   }
+
+   .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    margin: 8px 0 24px;
+    color: var(--text-color);
+   }
+
+   /* From Uiverse.io by csemszepp */
+   .custum-file-upload {
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    border: 2px dashed #e8e8e83d;
+    background-color: #21212100;
+    padding: 0 1rem;
+    border-radius: 10px;
+    text-align: center;
+   }
+
+   .custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .custum-file-upload .icon svg {
+    height: 70px;
+    fill: #e8e8e8;
+   }
+
+   .text2 {
+    display: inline-block;
+   }
+
+   .custum-file-upload span {
+    font-weight: 400;
+    color: #e8e8e8;
+   }
+
+   .custum-file-upload input {
+    display: none;
+   }
+#image-name, #file-name{
+  font-size: 8px;
+}
+.kitsuba_bug_hunter_wand{
+  width: 2px; !important
+  height: 2px;
+}
+#back-to-home{
+  position: absolute;
+  left: 12px;
+}
