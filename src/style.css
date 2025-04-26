@@ -190,6 +190,9 @@ html {
 body {
 background: var(--body_bg); 
 }
+.home_text{
+line-height: 1.6;
+}
 header{
   position: relative;
 }

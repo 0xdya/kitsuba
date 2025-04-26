@@ -112,7 +112,7 @@ function fetchUpdateDetails() {
         fetch("../update_log.json")
             .then(response => response.json())
             .then(data => {
-                let updateHTML =`<div class="update_line">   <span class="variable update_margin1">webStart</span>: <span class="string">"${data.datee}"</span>,<br></div>`;
+                let updateHTML =`<div class="update_line">   <span class="variable update_margin1">publish</span>: <span class="string">"${data.datee}"</span>,<br></div>`;
 
             updateHTML += ` <div class="update_line">  <span class="variable update_margin1">lastUpdate</span>: <span class="string" dir="rtl">"${timeSinceUpdate(data.lastUpdate)}"</span>,<br></div>`;
 
