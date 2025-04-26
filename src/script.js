@@ -1,37 +1,46 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    // التأكد من أن مكتبة AOS تم تحميلها
-    if (typeof AOS !== "undefined") {
-        AOS.init({
-            once: true // يجعل الأنميشن يحدث مرة واحدة فقط
-        });
-    } else {
-        console.error("مكتبة AOS لم يتم تحميلها بشكل صحيح.");
-    }
-
     // تعطيل التمرير عند تحميل الصفحة
     disableScroll();
 
-    window.addEventListener("load", function () {
-        let preloader = document.getElementById("preloader");
-        if (preloader) {
-            preloader.classList.add("preloader-hidden");
+    // التأكد من أن مكتبة AOS تم تحميلها
+    if (typeof AOS !== "undefined") {
+        // تهيئة AOS
+        AOS.init({
+            once: true // يجعل الأنميشن يحدث مرة واحدة فقط
+        });
 
-            setTimeout(() => {
-                preloader.style.display = "none";
-                enableScroll(); // إعادة التمرير بعد اختفاء البريلودر
-            }, 600);
-        }
-    });
+        // إخفاء البريلودر بعد تهيئة AOS
+        hidePreloader();
+    } else {
+        console.error("مكتبة AOS لم يتم تحميلها بشكل صحيح.");
+        // إخفاء البريلودر حتى لو لم يتم تحميل AOS
+        hidePreloader();
+    }
 });
+
+// دالة لإخفاء البريلودر
+function hidePreloader() {
+    let preloader = document.getElementById("preloader");
+    if (preloader) {
+        // إضافة كلاس لإخفاء البريلودر بتأثير تأخيري
+        preloader.classList.add("preloader-hidden");
+
+        // إخفاء البريلودر نهائيًا وإعادة التمرير بعد انتهاء التأثير
+        setTimeout(() => {
+            preloader.style.display = "none";
+            enableScroll(); // إعادة التمرير بعد اختفاء البريلودر
+        }, 600); // مدة التأخير تتناسب مع سرعة التأثير
+    }
+}
+
 // تعطيل التمرير بالكامل
 function disableScroll() {
-    document.body.classList.add("no-scroll"); // تعطيل التمرير
+    document.body.classList.add("no-scroll"); // إضافة كلاس لتعطيل التمرير
 }
+
 // إعادة التمرير بعد اختفاء البريلودر
 function enableScroll() {
-    document.body.classList.remove("no-scroll"); // إعادة التمرير
-
+    document.body.classList.remove("no-scroll"); // إزالة الكلاس لإعادة التمرير
 }
 
 // update card
