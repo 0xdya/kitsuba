@@ -130,49 +130,23 @@ node.each(function(d) {
       .on("click", (event, d) => {
         if (soundEnabled) playSound("chest.mp3");
 
-        // التحقق من اسم العقدة
-        if (d.data.name === "التواصل") {
-          // توجيه المستخدم إلى صفحة chi3r.html
-          window.location.href = "./contact/index.html";
-        } else {
-          // السلوك الافتراضي للنقر على العقد الأخرى
-          document.querySelectorAll("article[data-page]").forEach(article =>
-            article.classList.remove("active")
-          );
+        document.querySelectorAll("article[data-page]").forEach(article =>
+          article.classList.remove("active")
+        );
 
-          const targetPage = document.querySelector(`article[data-page="${d.data.name.toLowerCase()}"]`);
-          if (targetPage) targetPage.classList.add("active");
+        const targetPage = document.querySelector(`article[data-page="${d.data.name.toLowerCase()}"]`);
+        if (targetPage) targetPage.classList.add("active");
 
-          document.querySelectorAll("[data-nav-link]").forEach(link => {
-            link.classList.remove("active");
-            if (link.innerText.trim().toLowerCase() === d.data.name.toLowerCase()) {
-              link.classList.add("active");
-            }
-          });
-          window.scrollTo(0, 0);
-        }
-        if (d.data.name === "إبلاغ") {
-          // توجيه المستخدم إلى صفحة chi3r.html
-          window.location.href = "./contact/index.html";
-        } else {
-          // السلوك الافتراضي للنقر على العقد الأخرى
-          document.querySelectorAll("article[data-page]").forEach(article =>
-            article.classList.remove("active")
-          );
-
-          const targetPage = document.querySelector(`article[data-page="${d.data.name.toLowerCase()}"]`);
-          if (targetPage) targetPage.classList.add("active");
-
-          document.querySelectorAll("[data-nav-link]").forEach(link => {
-            link.classList.remove("active");
-            if (link.innerText.trim().toLowerCase() === d.data.name.toLowerCase()) {
-              link.classList.add("active");
-            }
-          });
-          window.scrollTo(0, 0);
-        }
+        document.querySelectorAll("[data-nav-link]").forEach(link => {
+          link.classList.remove("active");
+          if (link.innerText.trim().toLowerCase() === d.data.name.toLowerCase()) {
+            link.classList.add("active");
+          }
+        });
+        window.scrollTo(0, 0);
       });
   }
+
 
   elem.append("text")
     .attr("dy", ".35em")
