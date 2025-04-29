@@ -14,6 +14,7 @@
 	<meta property="og:url" content="https://d76.vercel.app">
 	<meta property="og:type" content="website">
 	<meta name="theme-color" content="#000000">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 	<link rel="stylesheet" href="./src/style.css">
 	<link rel="stylesheet" href="./src/style2.css">
 	<link rel="stylesheet" href="./src/kbh_style.css">
@@ -156,8 +157,8 @@
 						<button data-sound="" class="navbar-link" data-nav-link>الإعدادات</button>
 					</li>
 				</ul>
-			</nav> <span class="blur">
-			</span>
+			</nav>
+			<span class="blur"></span>
 			<article class="about active" data-page="الرئيسية">
 				<div class="banner">
 				  
@@ -188,18 +189,19 @@
    <div class="code-box" id="draggable-box">
     <div class="header"><span class="keyword">🧬 About () {</span></div>
     <div class="update-info" id="update-details">
-        <span class="keyword">let</span> <span class="variable">updateLog</span> <span class="bracket">=</span> <span class="bracket">{</span><br>
-        🔄 جاري تحميل التحديثات...<br>
-        <span class="bracket">}</span>;
+   <p dir="rtl" class="bracket"> 
+جاري تحميل التحديثات...<br>
+(   الانترنات عندك سيء  ,مازلت تعيش في 1994؟ )
+   </p>
     </div>
     <div class="header"><span class="keyword">};</span></div>
 </div>
  </div>
 					  </div>
 					</div>
-				</div>
 				<span class="blur2"></span>
-				<hr>
+				</div>
+				<hr class="pc_hr">
 				<section class="in_this_web"id="map">
 					<h3 data-aos-duration="1000" data-aos-delay="0" data-aos="fade-up"  class="h3 service-title article-title">   خريطة الموقع   </h3>
 					<div class="note_section">
@@ -1814,62 +1816,6 @@ Bookworm
     <button class="form-btn" type="submit">إرسال</button>
 </form>
 				</article>
-			<article class="contact " data-page="التواصل">
-				<header> 
-					<div class="back_to_map_button">
-						<div class="back_to_map_screen">الرئيسية » التواصل </div> <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a> </div>
-					<h2 class="h2 article-title">التواصل</h2> </header>
-			
-    <!-- 🔴 النموذج الثاني (بدون رفع ملفات) -->
-    <div class="contact-form">
-        <h3 class="h3 form-title">إرسال رسالة</h3>
-        <form class="form" id="messageForm">
-          <div class="input-wrapper">
-            <input type="text" id="fullName" class="form-input" placeholder="الإسم" required>
-          </div>
-            <textarea id="userMessage" class="form-input" placeholder="اكتب رسالتك هنا..." required></textarea>
-            <button class="form-btn" type="submit">
-ارسال            </button>
-        </form>
-        <p id="status-message"></p>
-    </div>
-
-</article>
-<article class="contact" data-page="إبلاغ">
-    <header>
-        <div class="back_to_map_button">
-            <div class="back_to_map_screen">الرئيسية » التواصل » إبلاغ</div>
-            <a data-sound="" id="back-to-home">الرجوع إلى الخريطة</a>
-        </div>
-        <h2 class="h2 article-title">إبلاغات / نصائح</h2>
-    </header>
-
-    <!-- 🟢 النموذج الأول (مع رفع الملفات) -->
-    <section class="contact-form">
-        <h3 class="h3 form-title">ما المشكلة ؟</h3>
-        <form class="form" id="contactForm1">
-            <div class="input-wrapper">
-                <input id="username1" name="username" class="form-input" placeholder="الإسم" required>
-            </div>
-            <textarea id="message1" name="message" class="form-input" placeholder="اكتب المشكلة هنا..." required></textarea>
-<div class="center">
-            <label for="file1" class="custum-file-upload">
-                <span id="file-name1">تحميل ملف</span>
-                <input type="file" id="file1" name="file">
-            </label>
-
-            <label for="image1" class="custum-file-upload">
-                <span id="image-name1">تحميل صورة</span>
-                <input type="file" id="image1" name="image" accept="me.webp">
-            </label>
-</div>
-            <button class="form-btn" type="submit">
-                <ion-icon name="paper-plane"></ion-icon> <span>إرسال</span>
-            </button>
-        </form>	
-    </section>
-
-</article>
 			<article class="setting " data-page="الإعدادات">
 				<header>
 					<div class="back_to_map_button">
@@ -1933,6 +1879,7 @@ Bookworm
 	</main>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<!-- partial -->
+	<script src="./src/poet.js"></script>
 	<script src="./src/script.js"></script>
 	<script src="./src/space.js"></script>
 	<script src="./analysis.js"></script>
