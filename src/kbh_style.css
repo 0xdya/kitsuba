@@ -726,9 +726,13 @@ background-image: url("./kbh/bg7.jpg");    margin: -2px;
 .alerts_style {
     position: fixed;
     top: 20px;
-    right: 20px;
-    width: 300px;
+    margin: 0 auto;
     z-index: 9999;
+    color: white;
+    border-radius: 8px;
+    background-color: #000000d0;
+    backdrop-filter: blur(8px);
+    font-size: 1.4rem;
 }
 
 /* تصميم كل تنبيه */

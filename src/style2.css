@@ -564,7 +564,6 @@ textarea.form-input {
     height: 120px;
     max-height: 200px;
     resize: vertical;
-    margin-bottom: 25px;
 }
 
 
@@ -772,6 +771,9 @@ textarea.form-input {
         --shadow2: 0px 16px 30px hsla(0, 0%, 0%, .125);
         --shadow3: 0px 16px 40px hsla(0, 0%, 0%, .125);
     }
+    .pc_hr{
+      display: none;
+    }
     .project-list { grid-template-columns: repeat(3, 1fr); }
     .blog-banner-box { height: 230px; }
     body::-webkit-scrollbar { width: 20px; }
@@ -805,7 +807,7 @@ textarea.form-input {
         box-shadow: var(--shadow5);
     }
     main {
-        max-width: 1200px;
+        max-width: 1000px;
         margin-inline: auto;
         display: flex;
         justify-content: center;
@@ -888,10 +890,7 @@ textarea.form-input {
     .social-list { justify-content: center; }
     .timeline-text { max-width: 700px; }
     .border{
-      width: 400px;
-    }
-    .content_flex2{
-      margin-top: 6rem;
+      width: 300px;
     }
     .bmo{
       left: -310px;
@@ -2096,8 +2095,7 @@ hr:before {
             margin: 6rem 1rem 0;
             border-radius: 15px;
            transition: 0.3s;
-           width: 100%;
-           max-width: 400px;
+           width: 340px;
            position: relative;
         }
         
@@ -2199,7 +2197,7 @@ hr:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("./img/magisk.jpg");
+  background-image: url("../img/magisk.jpg");
   background-repeat: no-repeat;
   z-index: -1;
   filter: blur(5px);
@@ -2253,3 +2251,4 @@ hr:before {
       );
   box-shadow: 0 0 1rem rgb(0 0 0 / 0.25);
 }
+

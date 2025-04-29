@@ -22,8 +22,7 @@ const data = {
   name: "في هذا الموقع",
   children: [
     { name: "بلوج" },
-    { name: "الإعدادات" },
-    { name: "KBH" },
+        { name: "التعليقات",},
     {
       name: "السيرة",
       children: [
@@ -40,18 +39,17 @@ const data = {
               ]}
           ]
         },
-        { name: "kitsuba" },
+        { name: "kitsuba",
+        children: [
+    { name: "KBH" }
+          ]
+          },
       ]
     },
-    {
-      name: "التواصل",
-      children: [
+ 
         { name: "إبلاغ" },
-        { name: "التعليقات",
-        }
-      ]
-    },
-  ]
+        { name: "الإعدادات" },
+        ]
 };
 
 // تحديد العنصر الحاوي وإعداد أبعاد SVG
@@ -132,20 +130,47 @@ node.each(function(d) {
       .on("click", (event, d) => {
         if (soundEnabled) playSound("chest.mp3");
 
-        document.querySelectorAll("article[data-page]").forEach(article =>
-          article.classList.remove("active")
-        );
+        // التحقق من اسم العقدة
+        if (d.data.name === "التواصل") {
+          // توجيه المستخدم إلى صفحة chi3r.html
+          window.location.href = "./contact/index.html";
+        } else {
+          // السلوك الافتراضي للنقر على العقد الأخرى
+          document.querySelectorAll("article[data-page]").forEach(article =>
+            article.classList.remove("active")
+          );
 
-        const targetPage = document.querySelector(`article[data-page="${d.data.name.toLowerCase()}"]`);
-        if (targetPage) targetPage.classList.add("active");
+          const targetPage = document.querySelector(`article[data-page="${d.data.name.toLowerCase()}"]`);
+          if (targetPage) targetPage.classList.add("active");
 
-        document.querySelectorAll("[data-nav-link]").forEach(link => {
-          link.classList.remove("active");
-          if (link.innerText.trim().toLowerCase() === d.data.name.toLowerCase()) {
-            link.classList.add("active");
-          }
-        });
-        window.scrollTo(0, 0);
+          document.querySelectorAll("[data-nav-link]").forEach(link => {
+            link.classList.remove("active");
+            if (link.innerText.trim().toLowerCase() === d.data.name.toLowerCase()) {
+              link.classList.add("active");
+            }
+          });
+          window.scrollTo(0, 0);
+        }
+        if (d.data.name === "إبلاغ") {
+          // توجيه المستخدم إلى صفحة chi3r.html
+          window.location.href = "./contact/index.html";
+        } else {
+          // السلوك الافتراضي للنقر على العقد الأخرى
+          document.querySelectorAll("article[data-page]").forEach(article =>
+            article.classList.remove("active")
+          );
+
+          const targetPage = document.querySelector(`article[data-page="${d.data.name.toLowerCase()}"]`);
+          if (targetPage) targetPage.classList.add("active");
+
+          document.querySelectorAll("[data-nav-link]").forEach(link => {
+            link.classList.remove("active");
+            if (link.innerText.trim().toLowerCase() === d.data.name.toLowerCase()) {
+              link.classList.add("active");
+            }
+          });
+          window.scrollTo(0, 0);
+        }
       });
   }
 
@@ -156,7 +181,6 @@ node.each(function(d) {
     .style("fill", "var(--white2)")
     .text(d.data.name);
 });
-
 // تحديث المحاكاة والرسم مع فرض حدود العنصر
 simulation.on("tick", () => {
 const bounds = container.getBoundingClientRect();
